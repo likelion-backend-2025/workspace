@@ -12,8 +12,12 @@ public class ArrayExam1 {
         //선언!!
         int[] iarr;
         int iarr2[];
+        int[][] iarr3;
+        int[] iarr4[];
         //배열의 생성
         iarr = new int[3];
+
+        int[] iarr5 = new int[4]; //배열의 크기는 생성할 때 반드시 정해야함.
 
         //index 를 사용해서 배열의 요소에 접근
         iarr[0] = 10;

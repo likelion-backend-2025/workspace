@@ -15,6 +15,7 @@ public class PersonExam2 extends Person{
         person.name = "knag";
 //        person.age = 20;  패키지가 달라서 접근 불가.
 //        person.address = "경기도";
+
 //        person.phoneNumber = "0101112222";  private 하므로 접근불가
 
 

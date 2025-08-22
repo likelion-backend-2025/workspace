@@ -14,7 +14,7 @@
 
 ### 2단계: 과제 수락하기
 
-![과제 수락 화면](images/accept-assignment.png)
+![과제 수락 화면](images/accept.png) 
 
 - 과제 페이지에서 **"Accept this assignment"** 버튼을 클릭합니다
 - 과제를 수락하면 `homework-[본인계정명]` 형태의 개인 레포지토리가 자동으로 생성됩니다

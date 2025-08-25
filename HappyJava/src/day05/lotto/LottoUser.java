@@ -7,7 +7,7 @@ public class LottoUser {
 
         for(int i = 0; i < 6; i++){
             Ball ball = lottoMachine.getBall();
-            System.out.println(ball.number);
+            System.out.println(ball.getNumber());
         }
     }
 }

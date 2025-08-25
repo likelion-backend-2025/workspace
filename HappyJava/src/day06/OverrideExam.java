@@ -70,7 +70,12 @@ public class OverrideExam {
         cat.makeSound();
 
         Animal animal = null;
-        if("1".equals(args[0])){
+        if("1" == args[0]){   //주소값을 비교하게됨.
+
+        }
+//        if("1".equals(args[0])){
+
+        if(Integer.parseInt(args[0]) == 1){
             animal = new Cat();
         }else{
             animal = new Dog();

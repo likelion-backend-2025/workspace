@@ -48,5 +48,8 @@ public class Exam01 {
     public static void test(Parent p){
         System.out.println(p.i);
         System.out.println(p.getI());
+
+        if(p instanceof Child)
+            ((Child)p).print();
     }
 }

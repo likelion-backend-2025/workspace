@@ -18,12 +18,21 @@ class Child1 extends Parent1{
     }
 }
 public class Exam02 {
+    public static void test(Object child1){
+
+    }
+
+
     public static void main(String[] args) {
         //1. 부모(조상)는 자식(자손)을 가리킬 수 있다.
         Parent1 p = new Child1();
 //    Child1 c = new Parent1(); // 오류 발생..  이유는?
         Object obj = new Parent1();
         Object obj2 = new Child1();
+
+        test( p);
+        test(obj);
+        test(obj2);
 
 //    새 b = new 참새();
 //    새 b2 = new 비둘기();
@@ -34,6 +43,7 @@ public class Exam02 {
         System.out.println(pp.i);
         Child1 cc = new Child1();
         System.out.println(cc.i);
+
         Parent1 pc = new Child1();
         System.out.println(pc.i);
 

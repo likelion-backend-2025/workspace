@@ -3,7 +3,7 @@ package day07;
 public abstract  class Animal {
     private String name;
 
-    public void 먹다(){
+    public /*final*/  void 먹다(){
         System.out.println("먹는다.");
     }
     public void 걷는다(){

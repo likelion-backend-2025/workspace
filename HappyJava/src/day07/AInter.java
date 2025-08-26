@@ -1,4 +1,6 @@
 package day07;
 
-public class AInter {
+public interface AInter {
+    void aMethod();
+    void bMethod();
 }

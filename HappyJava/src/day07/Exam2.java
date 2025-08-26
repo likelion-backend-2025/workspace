@@ -7,7 +7,7 @@ public class Exam2 {
 //        Animal animal = new Animal() ;
 
         //타입으로의 역할은 모두 가능!!
-        Animal animal = new Dog();
+//        Animal animal = new Dog();
         Animal animal1 = new Cat();
 
         //부모타입으로 자식이 새로 구현한 메소드를 사용할 수 없죠?

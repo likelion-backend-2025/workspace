@@ -1,6 +1,6 @@
 package day07;
 
-class Pen {
+/*final*/  class Pen {
     public void 쓰다(){
         System.out.println("쓰다");
     }

@@ -2,7 +2,7 @@ package day08;
 
 import java.util.Objects;
 
-public class MyClass {
+public class MyClass /*extends ImmutableClass*/ {
     String name;
 //    int value;
 
@@ -46,6 +46,10 @@ public class MyClass {
         System.out.println(myClass.equals(myClass));
 
         System.out.println(myClass.getClass());
+
+        System.out.println(myClass.hashCode());
+        myClass2.name="kim";
+        System.out.println(myClass2.hashCode());
     }
 
 }

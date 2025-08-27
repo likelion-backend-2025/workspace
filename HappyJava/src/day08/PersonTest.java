@@ -11,5 +11,9 @@ public class PersonTest {
 
         Person kim = new Person("kim",20,"강남구 역삼동");
         System.out.println(kim);
+        java.lang.String test = "test";
+        if("test".equals(test)){
+            System.out.println("같아요");
+        }
     }
 }

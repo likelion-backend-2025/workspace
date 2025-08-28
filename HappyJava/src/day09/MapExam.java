@@ -18,6 +18,7 @@ public class MapExam {
         phoneBook.put("kang","010-111-1111");
         phoneBook.put("kim","010-222-2222");
         phoneBook.put("hong","010-333-3333");
+        phoneBook.put("kang", "010-555-5555");
 
         System.out.println(phoneBook.get("kang"));
 

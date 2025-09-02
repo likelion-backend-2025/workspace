@@ -67,11 +67,22 @@ public class Exam10 {
         //함수 - 일급객체로 취급하지 않는다.
         Collections.sort(persons, (o1,o2)->o1.getAge() - o2.getAge());
 
+        System.out.println("나이기준");
+        System.out.println(persons);
 
         //나이를 기준점으로 삼고있었다면,
         //이번에는 이름으로 정렬되도록 구현해 보세요.
+        System.out.println("이름기준");
+        Collections.sort(persons, new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        System.out.println(persons);
 
-        
+        System.out.println("kang".compareTo("kim"));
+
 
 
 

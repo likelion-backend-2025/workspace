@@ -82,10 +82,12 @@ public class Exam10 {
         System.out.println(persons);
 
         System.out.println("kang".compareTo("kim"));
+        System.out.println("kang".compareTo("kang"));
+        System.out.println("kang".compareTo("aaa"));
 
 
 
-
+Comparable c = "abc";
 
 
 

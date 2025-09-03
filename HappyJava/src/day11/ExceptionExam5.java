@@ -24,7 +24,7 @@ public class ExceptionExam5 {
         System.out.println(10/i);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
          심부름();
 
          //Unhandled exception: java.lang.Exception
@@ -41,6 +41,8 @@ public class ExceptionExam5 {
 
          str.charAt(0);
 
-//        FileReader fr = new FileReader("a");
+        FileReader fr = new FileReader("a");
+
+        심부름2();
     }
 }

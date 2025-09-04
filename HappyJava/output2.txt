@@ -1,42 +1,4 @@
-package day12;
-
-import java.io.*;
-import java.net.URL;
-
-public class IOExam1 {
-    public static void main(String[] args) throws IOException {
-//        IO  가 의미하는게 무엇일까요?
-        //파일로부터 한줄식 읽고싶다.
-        //키보드로부터 한줄씩 입력받고 싶다.
-        //키보드 System.in;
-//        InputStream fis = System.in;
-        FileInputStream fis = new FileInputStream("input.txt");
-
-        //URL
-//        URL url = new URL("https://carami.github.io/likelion-backend-guide/java/java-15_IO/");
-//        InputStream fis = url.openStream();
-
-        InputStreamReader isr = new InputStreamReader(fis);
-        BufferedReader br = new BufferedReader(isr);
-
-        String msg=null;
-//        String msg = br.readLine();
-//        msg = br.readLine();
-//        msg = br.readLine();
-//        System.out.println(msg);
-
-        while ((msg = br.readLine()) != null){
-            System.out.println(msg);
-        }
-
-//        복잡해보이나요?
-//        샤워꼭지 - 생각해볼까요?
-
-        br.close();
-        fis.close();
-
-        //IO 자원들을 사용하고 나면..  close 하는것이 좋다.
-
-        BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-    }
-}
+hello~~!!
+io는 처음이지??
+이해하고 있으신건가요??
+나름 신기하고 재밌죠???

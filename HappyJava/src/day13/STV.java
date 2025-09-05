@@ -4,19 +4,19 @@ package day13;
 public class STV implements TV{
 
     public void turnOn(){
-        System.out.println("TV 켜짐");
+        System.out.println("STV TV 켜짐");
     }
 
     public void turnOff(){
-        System.out.println("TV 꺼짐");
+        System.out.println("STV TV 꺼짐");
     }
 
     public void volumeUp(){
-        System.out.println("TV 볼륨이 올라감");
+        System.out.println("STV  TV 볼륨이 올라감");
     }
 
     public void volumeDown(){
-        System.out.println("TV 볼륨이 내려감");
+        System.out.println("STV TV 볼륨이 내려감");
     }
 
 }

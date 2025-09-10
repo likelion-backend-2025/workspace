@@ -104,6 +104,98 @@ desc emp;
 select upper('hello'), lower('HELLO');
 select * from emp;
 
-select * from emp where upper(job)  = 'manager';
+select * from emp where lower(job)  = 'manager';
 
+select lower(job) from emp;
 
+SELECT SUBSTRING('Hello World', 1, 5);
+select concat(ename, '사원님' ) from emp; 
+
+SELECT ROUND(3.7), CEIL(3.2), FLOOR(3.9);
+
+SELECT DATEDIFF('2024-12-31', NOW());
+
+SELECT 
+    DATE_ADD(NOW(), INTERVAL 100 DAY);
+    
+-- 오늘 날짜와 시간을 구하세요. 
+SELECT NOW();       -- 현재 날짜와 시간
+SELECT CURDATE();   -- 오늘 날짜만
+SELECT CURTIME();   -- 현재 시간만
+
+-- 올해가 몇 년도인지, 이번달이 몇 월인지, 오늘이 며칠인지 구해보세요. 
+SELECT YEAR(NOW())   AS 올해,
+       MONTH(NOW())  AS 이번달,
+       DAY(NOW())    AS 오늘일자;
+
+-- 오늘부터 200일 뒤의 날짜를 구하세요.  
+SELECT 
+    DATE_ADD(NOW(), INTERVAL 200 DAY) as "200일 후";
+
+-- 2025년 8월 13일부터 며칠 지났는지 구하세요. 
+SELECT DATEDIFF(CURDATE(), '2025-08-13') AS 수업시작후;
+
+-- 오늘 날짜를 2025년 09월 10일 과 같은 형태로 출력하세요.  
+SELECT DATE_FORMAT(CURDATE(), '%Y년 %m월 %d일') AS 오늘날짜;
+
+select DATE_FORMAT(hiredate, '%Y년 %m월 %d일')from emp;
+
+desc emp;
+-- 단일행 함수.  
+-- 그룹함수 
+select count(ename)  from emp;  -- 그룹합수와 일반 컬럼은 같이 나올 수 없다. 
+select count(comm) from emp; -- counting할때..  null 아닌것들만 한다. 
+select count(*) from emp;
+
+select sum(sal) from emp; 
+
+-- 부서별 급여 평균을 구하고 싶다. 
+select deptno, avg(sal) from emp 
+group by deptno;  -- 그룹핑에 참여한 컬럼은 컬럽절이 나올 수 있다. 
+
+-- 부서별, 직무별 평균을 구하고 싶다. 
+select job, avg(sal) from emp 
+group by job;
+
+select deptno,job, avg(sal) from emp 
+group by deptno, job
+order by 1, 2;
+
+-- 조건  where : 전체에 대한 조건  
+-- 조건 having : 그룹핑 된 결과에 대한 조건 
+
+-- 나는 10번 부서를 제외한 모든 사원의 부서별, 직무별로 평균 급여를 알고 싶다.  
+-- 단 평균 급여가 3000 이상인 결과는 제외하고 보고 싶어요. 
+select deptno,job, avg(sal) 평균급여 from emp 
+where deptno != 10
+group by deptno, job
+having 평균급여 < 3000
+order by 1, 2;
+
+desc emp;
+desc dept;
+select * from emp;
+-- 컬럼명 나열. 
+select ename, sal, dname from emp, dept;
+select ename, sal, dept.deptno, dname from emp, dept;
+
+-- 명확하게 컬럼명 앞에 테이블을 명시하는게 좋다. 
+select e.ename, e.sal, d.deptno, d.dname from emp e, dept d;
+
+-- 결과가 어떤거 같은가요?? 
+
+-- 조인 조건이 필요하다.  조인 조건이 없으면,  모든 가능한 쌍이 다 나온다.  Cross Join 
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e, dept d
+where e.deptno = d.deptno;
+
+select * from dept;
+
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e natural join dept d;
+
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e  join dept d using(deptno);
+
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e  join dept d on  e.deptno = d.deptno;

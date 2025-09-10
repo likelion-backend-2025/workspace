@@ -34,3 +34,12 @@ FROM employees;
 SELECT * FROM employees 
 WHERE (department_id = 90 OR department_id = 100)
   AND salary >= 10000;
+  
+ desc employees;
+ 
+ select department_id, count(*) as 부서별직원수, avg(salary) as 평균급여
+from employees
+group by department_id
+having count(*) >=5;
+
+use hr;

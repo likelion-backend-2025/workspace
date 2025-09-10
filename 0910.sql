@@ -18,4 +18,42 @@ select
  ;
  
  select current_date;
+ 
+ show tables;
+ 
+ desc emp;   --  테이블의 구조를 확인함. 
+ 
+ select * from emp;
+ select job from emp;
+ select distinct job from emp;
+select distinct job, empno from emp;
+  
+select job, empno from emp;
+select empno 사번, ename as "사원 이름", mgr as 매니저 from emp;
+
+select ename, sal * 18 "연봉" from emp;
+  
+select ename, sal * 18 from emp;
+  
+select ename from emp;
+
+-- 조건에 만족하는 데이터만 보고 싶다면??  WHERE  
+select * from emp where deptno = 10; 
+select * from emp where job='manager'; -- ''안에 들어와 있는 것들..  값 에 대해서 다른 DB는 대소문자 구분함. 
+select * from emp where sal > 2500;
+select * from emp where sal > 2500 and job = 'manager';
+
+
+-- in  은 or 결합 .
+select * from emp 
+where deptno = 10 or deptno = 20 or deptno = 30;
+
+select * from emp 
+where deptno in (10, 20, 30) ;
+
+select * from emp 
+where deptno not in (10,40);
+
+
+
 

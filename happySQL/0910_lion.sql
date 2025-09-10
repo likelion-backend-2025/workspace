@@ -54,6 +54,56 @@ where deptno in (10, 20, 30) ;
 select * from emp 
 where deptno not in (10,40);
 
+select * from emp where sal between 2000 and 3000;
 
+select * from emp where hiredate between '1981-01-01' and '1981-12-31';
+
+select * from emp where ename = 'FORD';
+
+-- 이름이 F 로 시작하는 사람을 모두 구하고 싶어요. 
+-- %  어떤 의미?   % 모든 (*)  0개도 포함됨. 
+-- _ 한 자 
+
+-- 이름의 두번째 글자가 O 인 사원을 조회하고 싶어요. 
+select * from emp where ename like '_O%';
+
+SELECT * FROM emp WHERE hiredate LIKE '1981%';
+
+select * from emp where comm is not null;
+
+select ename,sal, comm,  sal + comm 급여 from emp;
+
+select comm,  ifnull(comm, 100) from emp;
+
+select ename,sal, comm,  sal + ifnull(comm,100) 급여 from emp;
+
+select ename, coalesce(comm,job,'몰라') from emp;
+
+desc emp;
+select empno, ename, job, mgr, sal from emp;
+select empno, ename, job, mgr, sal from emp 
+order by ename asc;
+select empno, ename, job, mgr, sal from emp 
+order by ename desc;
+select empno, ename, job, mgr, sal from emp 
+order by sal asc;
+select empno, ename, job, mgr, sal,deptno from emp 
+order by 5 asc,2;
+
+select empno, ename, job, mgr, sal,deptno from emp 
+order by deptno, 5 desc;
+
+select empno, ename, mgr*18 연봉 from emp
+order by 연봉;
+
+select empno, ename, mgr*18 연봉 from emp
+order by 3 limit 10;
+
+desc emp;
+
+select upper('hello'), lower('HELLO');
+select * from emp;
+
+select * from emp where upper(job)  = 'manager';
 
 

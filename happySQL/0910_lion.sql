@@ -199,3 +199,12 @@ from emp e  join dept d using(deptno);
 
 select e.ename, e.sal, d.deptno, d.dname 
 from emp e  join dept d on  e.deptno = d.deptno;
+
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e, dept d
+where e.deptno = d.deptno
+and e.deptno = 20;  -- and를 이용해서 조인조건 외에 다른 조건들을 쓸 수 있다. 
+
+select e.ename, e.sal, d.deptno, d.dname 
+from emp e  join dept d on  e.deptno = d.deptno
+where e.deptno = 20;

@@ -192,6 +192,11 @@ CREATE TABLE B (name INT);
 INSERT INTO A VALUES (1), (2), (3);
 INSERT INTO B VALUES (2), (3), (4);
 
+insert into a values (now());  -- 오류
+insert into a values ('a');   -- 오류
+
+insert into a values(1);
+
 select * from a;
 select * from b;
 
@@ -240,3 +245,44 @@ SELECT
     ename,
     DENSE_RANK() OVER(ORDER BY sal DESC) AS dense_ranking
 FROM emp;
+
+-- 학생 (id, name, age, email, created_date) 
+-- 테이블 이름은 복수로 쓰는게 일반적이다. 
+create table students(
+ id int  primary key auto_increment,-- 기본키 (반드시 설정해야함.) 
+ name varchar(50) not null,
+ age int check(age>=1 and age <= 120),
+ email varchar(100) unique,
+ created_date datetime default current_timestamp
+);
+
+
+select job from emp;
+desc emp;
+desc students;
+
+-- products  (id, name, price, reg_date) 
+create table products(
+id int primary key auto_increment,
+name varchar(30) not null,
+price int,
+reg_date datetime);
+
+desc products;
+
+-- 데이터 삽입 
+-- insert into 테이블 명(컬럼명..) values (값...) ;   앞에 나열된 컬럼명 순서대로 값이 나열되어야함.
+-- insert into 테이블 명 values (값...) ; 컬럼명이 생략되면, desc 테이블명 해서 나온 순서대로 모든 값이 나열되어야 함.
+
+insert into products (name,price) values('pen',3000);
+
+select * from products;
+
+insert into products (price) values(3000);  -- 왜 오류 밠갱하는지 이해되시나요?
+
+insert into products values(null,'pen',3000,null);
+
+
+
+
+

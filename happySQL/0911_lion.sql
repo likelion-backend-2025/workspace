@@ -256,6 +256,9 @@ create table students(
  created_date datetime default current_timestamp
 );
 
+insert into students(name,age,email) values('kang',10,'carami@gmail.com');
+insert into students(name,age,email) values('kim',130,'kim@gmail.com');
+select * from students;
 
 select job from emp;
 desc emp;
@@ -274,7 +277,7 @@ desc products;
 -- insert into 테이블 명(컬럼명..) values (값...) ;   앞에 나열된 컬럼명 순서대로 값이 나열되어야함.
 -- insert into 테이블 명 values (값...) ; 컬럼명이 생략되면, desc 테이블명 해서 나온 순서대로 모든 값이 나열되어야 함.
 
-insert into products (name,price) values('pen',3000);
+insert into products (name,price) values('pen',3000),('cup',5000);
 
 select * from products;
 
@@ -282,7 +285,40 @@ insert into products (price) values(3000);  -- 왜 오류 밠갱하는지 이해
 
 insert into products values(null,'pen',3000,null);
 
+-- 책 ( 지은이, isbn, 제목, 가격, 발행일) 
+create table books(
+id int primary key auto_increment,
+isbn varchar(20) not null unique,
+title varchar(255) not null,
+author varchar(50) not null,
+price int not null default 0 check(price >=0),
+publication_date date not null,
+created_at timestamp default current_timestamp
+)engine=InnoDB default charset=utf8mb4;
 
+INSERT INTO books (isbn, title, author, price, publication_date)
+VALUES('123-11','즐거운자바','강경미',25000, '2015-05-05');
+INSERT INTO books 
+values('123-22','즐거운database','kang',30000,'2024-01-29',default);
 
+select * from books;
 
+-- 수정, 삭제 
+-- UPDATE 테이블명 SET 컬럼명 = '수정할 값' , 컬럼명 = '수정할 값' WHERE 조건 
+-- where 절 없이 사용하면 모든데이터를 수정  
+UPDATE books SET title = '즐거운 SQL2',author='carami' WHERE isbn = '123-22';
+
+-- 삭제
+-- DELETE FROM 테이블명 WHERE 조건 
+DELETE FROM books WHERE isbn='123-22';
+
+create index books_author_idx 
+on books(author);
+
+show index from books;
+
+alter table books
+drop index books_author_idx;
+
+explain select * from books where author='강경미';
 

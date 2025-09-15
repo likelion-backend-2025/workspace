@@ -16,8 +16,8 @@ public class UpdateTest {
         //2. 쿼리 작성
         String sql = "update dept set dname=? where deptno=?";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1,"교육부");
-        ps.setInt(2,50);
+        ps.setString(1,"총무부");
+        ps.setInt(2,5);
 
         //3. 쿼리 실행
         int resutlCount = ps.executeUpdate();
@@ -28,6 +28,8 @@ public class UpdateTest {
             System.out.println("update fail");
         }
 
+        ps.close();
+        conn.close();
 
     }
 }

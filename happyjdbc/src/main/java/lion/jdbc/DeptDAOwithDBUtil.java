@@ -53,6 +53,34 @@ public class DeptDAOwithDBUtil {
         }
         return resultFlag;
     }
+    //1건 조회
+    public DeptDTO getDept(int deptno){
+        String sql = "SELECT deptno, dname,loc FROM dept WHERE deptno=?";
+        DeptDTO deptDTO = null;
+        ResultSet rs = null;
+        try( Connection conn = DBUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+                ){
+            ps.setInt(1,deptno);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                //해당 데이터가 존재할 때만 가방을 생성함.
+                deptDTO = new DeptDTO();
+                deptDTO.setDeptno(rs.getInt(1));
+                deptDTO.setDname(rs.getString("dname"));
+                deptDTO.setLoc(rs.getString("loc"));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            DBUtil.close(rs);
+        }
+        return deptDTO;
+    }
+
+
+
+
 
     //조회
     public List<DeptDTO> getDeptList() {

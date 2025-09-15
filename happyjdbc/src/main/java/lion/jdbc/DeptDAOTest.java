@@ -17,10 +17,14 @@ public class DeptDAOTest {
 
 
         DeptDAOwithDBUtil deptDAOwithDBUtil = new DeptDAOwithDBUtil();
-        List<DeptDTO> deptList = deptDAOwithDBUtil.getDeptList();
+//        List<DeptDTO> deptList = deptDAOwithDBUtil.getDeptList();
+//
+//        for (DeptDTO deptDTO1 : deptList) {
+//            System.out.println(deptDTO1);
+//        }
 
-        for (DeptDTO deptDTO1 : deptList) {
-            System.out.println(deptDTO1);
-        }
+        DeptDTO resultDeptDTO = deptDAOwithDBUtil.getDept(10);
+
+        System.out.println(resultDeptDTO);
     }
 }

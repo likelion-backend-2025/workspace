@@ -1,4 +1,4 @@
-package lion.jdbc;
+package lion.common;
 
 import java.sql.*;
 

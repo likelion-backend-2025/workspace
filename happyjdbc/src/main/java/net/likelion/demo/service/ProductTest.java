@@ -4,6 +4,8 @@ import net.likelion.demo.dto.ProductDTO;
 import net.likelion.demo.repository.ProductDAO;
 import net.likelion.demo.repository.ProductDAOImpl;
 
+import java.util.List;
+
 public class ProductTest {
     public static void main(String[] args) {
         ProductDAO productDAO = new ProductDAOImpl();
@@ -20,7 +22,13 @@ public class ProductTest {
         //커밋 롤백 까지 같이 이해해 보세요.
 
         ProductDTO product = productDAO.getProduct(1);
-        System.out.println(product);
+//        System.out.println(product);
+
+        List<ProductDTO> products = productDAO.getProducts();
+
+        for(ProductDTO productDTO : products){
+            System.out.println(productDTO);
+        }
 
     }
 }

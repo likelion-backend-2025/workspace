@@ -5,6 +5,7 @@ import net.likelion.demo.common.DBUtil;
 import net.likelion.demo.dto.ProductDTO;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAOImpl implements ProductDAO {
@@ -76,7 +77,35 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public List<ProductDTO> getProducts() {
-        return List.of();
+        List<ProductDTO> products = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select * from products";
+
+        try{
+            conn = DBUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs= ps.executeQuery();
+
+            while(rs.next()){
+                ProductDTO product = new ProductDTO();
+
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setPrice(rs.getInt("price"));
+                product.setRegDate(rs.getTimestamp("reg_date").toLocalDateTime());
+            }
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            DBUtil.close(conn,ps,rs);
+        }
+
+
+
+        return products;
     }
 
     @Override
@@ -99,6 +128,9 @@ public class ProductDAOImpl implements ProductDAO {
                 product.setId(rs.getInt("id"));
                 product.setName(rs.getString("name"));
                 product.setPrice(rs.getInt("price"));
+////                Timestamp timestamp = rs.getTimestamp("reg_date");
+////                if()
+//                System.out.println(rs.getTimestamp("reg_date"));
                 product.setRegDate(rs.getTimestamp("reg_date").toLocalDateTime());
             }
         }catch(Exception e){
@@ -110,4 +142,11 @@ public class ProductDAOImpl implements ProductDAO {
 
         return product;
     }
+
+
+    // select 할때  ResultSet에서 값을 꺼내서 DTO에 담는 작업을 한건조회할때도, 여러건 조회할때도 계속 사용
+    //되고 있어요.   상품명으로 조회, 등등 메서드가 더 추가된다면???  어떤가요??
+//   그 일만하는 메서드를 따로 꺼내서 사용하고 싶으신가요??
+//    접근제한자 ? -뭘로???   리턴타입!!!    뭘 리턴하면 될까요?  
+    private
 }

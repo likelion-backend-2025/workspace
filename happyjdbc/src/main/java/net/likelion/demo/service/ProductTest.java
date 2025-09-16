@@ -19,7 +19,8 @@ public class ProductTest {
 
         //커밋 롤백 까지 같이 이해해 보세요.
 
-        ProductDTO product = productDAO.getProduct(8);
+        ProductDTO product = productDAO.getProduct(1);
         System.out.println(product);
+
     }
 }

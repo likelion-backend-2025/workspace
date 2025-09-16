@@ -8,8 +8,8 @@ public class DBUtil {
     //접속
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         String url = "jdbc:mysql://localhost:3306/liondb"; //DBMS들 마다 원하는 url 형식이 조금씩 다르더라.
-        String user = "carami";
-        String password = "kang1234";
+        String user = "root";
+        String password = "root1234";
 
         return DriverManager.getConnection(url, user, password);
     }

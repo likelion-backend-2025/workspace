@@ -1,10 +1,10 @@
 package net.likelion.demo.repository;
 
-import lion.common.DBUtil;
+
+import net.likelion.demo.common.DBUtil;
 import net.likelion.demo.dto.ProductDTO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.util.List;
 
 public class ProductDAOImpl implements ProductDAO {
@@ -34,7 +34,34 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public int addProductAndGetId(ProductDTO product) {
-        return 0;
+        int id = 0;
+        String sql = "insert into products (name,price,reg_date) values (?,?,now())";
+
+        try(
+                //접속
+                Connection conn = DBUtil.getConnection();
+                //쿼리작성
+                PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+        ) {
+            ps.setString(1, product.getName());
+            ps.setInt(2, product.getPrice());
+            //실행
+            int count = ps.executeUpdate();
+            if (count > 0) {
+                ResultSet rs = ps.getGeneratedKeys();
+                if(rs.next()) {
+                    id = rs.getInt(1);
+                }
+            }    else{
+                System.out.println("상품등록에 실패했습니다.");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return id;
     }
 
     @Override
@@ -54,6 +81,33 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public ProductDTO getProduct(int id) {
-        return null;
+
+        ProductDTO product = null;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select * from products where id = ?";
+
+        try{
+            conn = DBUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                product = new ProductDTO();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setPrice(rs.getInt("price"));
+                product.setRegDate(rs.getTimestamp("reg_date").toLocalDateTime());
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            DBUtil.close(conn,ps,rs);
+        }
+
+
+        return product;
     }
 }

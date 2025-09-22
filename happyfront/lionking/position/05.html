@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div {
+        width: 800px;
+        height: 1000px;
+        border: black solid 5px;
+        margin: 30px;
+        display: inline-block;
+        color: white;
+      }
+      .scroll {
+        overflow: visible;
+        display: block;
+      }
+      .static {
+        width: 150px;
+        height: 150px;
+        border: none;
+        background: gray;
+        text-align: center;
+        line-height: 150px;
+      }
+      .sticky {
+        width: 150px;
+        height: 150px;
+        border: none;
+        background: blue;
+        text-align: center;
+        line-height: 150px;
+        position: sticky;
+        top: 50px;
+      }
+      .fixed {
+        width: 150px;
+        height: 150px;
+        border: none;
+        background: red;
+        text-align: center;
+        line-height: 150px;
+        position: fixed;
+        bottom: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div scroll">
+      <div class="div static">.static</div>
+      <div class="div sticky">.sticky</div>
+      <div class="div fixed">.fixed</div>
+    </div>
+    <div class="div scroll">
+      <div class="div static">.static</div>
+      <div class="div sticky">.sticky</div>
+    </div>
+    <div class="div scroll"></div>
+  </body>
+</html>

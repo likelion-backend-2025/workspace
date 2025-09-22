@@ -1,0 +1,33 @@
+@charset "utf-8";
+body {
+  height: 1500px;
+}
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: #438eb9;
+  position: static;
+}
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: #629b58;
+  position: relative;
+  left: 280px;
+}
+.box3 {
+  width: 200px;
+  height: 200px;
+  background-color: #e59729;
+  position: absolute;
+  top: 70px;
+  left: 30px;
+}
+.box4 {
+  width: 200px;
+  height: 200px;
+  background-color: #b74635;
+  position: fixed;
+  top: 10px;
+  left: 500px;
+}

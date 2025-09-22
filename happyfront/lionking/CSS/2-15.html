@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS속성 - 배치</title>
+    <style type="text/css">
+      body {
+        height: 1500px;
+      }
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #438eb9;
+        position: static;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: #629b58;
+        position: relative;
+        left: 280px;
+      }
+      .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: #e59729;
+        position: absolute;
+        top: 70px;
+        left: 30px;
+      }
+      .box4 {
+        width: 200px;
+        height: 200px;
+        background-color: #b74635;
+        position: fixed;
+        top: 10px;
+        left: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">box1. 기준</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      .exciting-text::after {
+        content: " <- 흥미진진!";
+        color: green;
+      }
+
+      .boring-text::after {
+        content: " <- 먼지풀풀";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="boring-text">적당히 평범하고 심심한 글입니다.</p>
+    <p>지루하지도 흥미진진하지도 않은 글입니다.</p>
+    <p class="exciting-text">MDN 기여는 쉽고 재밌습니다.</p>
+    Copy to Clipboard
+  </body>
+</html>

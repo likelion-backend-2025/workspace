@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      a[href*="tuts"] {
+        color: #1f6053; /* nettuts green */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li>
+          List Item
+          <ul>
+            <li>Child</li>
+          </ul>
+        </li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit amet,
+        <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do
+        <a href="http://nettuts.com">Nettuts</a> tempor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur
+        <a href="#">adipisicing</a> elit, sed do eiusmod tempor.
+      </p>
+      <p>
+        Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet,
+        consectetur adipisicing elit, sed do eiusmod tempor.
+      </p>
+    </div>
+  </body>
+</html>

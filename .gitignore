@@ -1,9 +1,34 @@
-### IntelliJ IDEA ###
+########################################
+### 공통 (모든 프로젝트 공통)
+########################################
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+########################################
+### Java / IntelliJ / Eclipse / NetBeans
+########################################
+# IntelliJ
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### Eclipse ###
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
@@ -15,15 +40,51 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
+# Compiled class files
+*.class
+*.iml
 
-### Mac OS ###
-.DS_Store
+# Gradle
+.gradle/
+build/
+
+
+########################################
+### Vanilla npm 프로젝트 (기본)
+########################################
+# Node modules
+node_modules/
+
+# Build 결과물
+dist/
+build/
+
+# 테스트/커버리지
+coverage/
+.nyc_output/
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+
+########################################
+### React / Vite / Next.js 확장 (추가 시 활성화)
+########################################
+# React, Vite, Next.js 빌드 산출물
+.cache/
+.next/
+out/
+
+# Lock files (학습 프로젝트 → 무시, 팀 협업 → 커밋 권장)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

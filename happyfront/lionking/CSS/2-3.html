@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>선택자의 종류</title>
+    <style type="text/css">
+      /* 태그선택자 1,  class 선택자는 10,  id는 100 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .class-selector {
+        font-size: 100px;
+      }
+      #type-selector {
+        background-color: #ddd;
+      }
+      #b {
+        color: blue;
+      }
+      .a {
+        color: black;
+      }
+      p {
+        color: #f62727;
+      }
+      p {
+        color: aqua;
+      }
+      /* id = 같은 이름의 id가 하나의 html 페이지에서 여러번 나오면 안된다. 
+        class = 여러번 나와도 괜찮아요. 
+      */
+      .aa {
+        font-size: 20px;
+      }
+      .c {
+        background-color: chartreuse;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="type-selector">
+      <h1 class="class-selector">선택자란?</h1>
+      <p class="a" id="b">
+        선택자는 CSS에서 HTML의 특정 요소를 선택하기 위한 규칙입니다.
+      </p>
+    </div>
+    <div>
+      <p class="a aa">두번째 div 입니다.</p>
+
+      <p class="c a aa" id="type-selector">세번째 p 태그입니다.</p>
+    </div>
+
+    <div>
+      <p>test1</p>
+      <p>test2</p>
+      <p>test3</p>
+    </div>
+  </body>
+</html>

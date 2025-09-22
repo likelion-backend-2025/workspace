@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      div p:only-of-type {
+        color: red;
+      }
+
+      li:only-of-type {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>My paragraph here.</p>
+      <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+    </div>
+
+    <div>
+      <p>Two paragraphs total.</p>
+      <p>Two paragraphs total.</p>
+      <ul>
+        <li>List Item</li>
+      </ul>
+    </div>
+  </body>
+</html>

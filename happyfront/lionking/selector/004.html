@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      div > p {
+        color: red;
+      }
+      h1 + p {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>인접형제 테스트</h1>
+    <p>인접형제 옆에 p</p>
+    <div id="container">
+      <p>My paragraph here.</p>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <p>test</p>
+      </ul>
+
+      <ul>
+        <li class="warning">Something went Wrong</li>
+        <li>List Item 4</li>
+      </ul>
+    </div>
+
+    <p>Paragraph outside of div</p>
+  </body>
+</html>

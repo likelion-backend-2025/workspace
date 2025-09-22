@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      a[data-info~="external"] {
+        color: red;
+      }
+
+      a[data-info~="image"] {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li>
+          List Item
+          <ul>
+            <li>Child</li>
+          </ul>
+        </li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit amet,
+        <a href="http://www.google.com" data-info="external" title="Some title"
+          >consectetur</a
+        >
+        adipisicing elit, sed do
+        <a href="http://nettuts.com">Nettuts</a> tempor.
+      </p>
+      <p>
+        <a
+          href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png"
+          data-info="image"
+          >PNG Image</a
+        >
+        ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur
+        <a href="#">adipisicing</a> elit, sed do eiusmod tempor.
+      </p>
+      <p>
+        Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet,
+        consectetur "<a
+          href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg"
+          data-info="external image"
+          >Getting Good with Git</a
+        >" elit, sed do eiusmod tempor.
+      </p>
+    </div>
+  </body>
+</html>

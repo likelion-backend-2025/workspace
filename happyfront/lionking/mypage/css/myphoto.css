@@ -1,0 +1,25 @@
+section.main > ul > li {
+  margin-bottom: 30px;
+  padding: 5%;
+  overflow: hidden;
+}
+
+section.main > ul > li :not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+
+img.list-img,
+.list-text {
+  float: left;
+}
+
+.list-img {
+  border: 10px solid black;
+}
+
+.list-text {
+  text-align: center;
+  margin-left: 5%;
+  line-height: 2em;
+  width: 500px;
+}

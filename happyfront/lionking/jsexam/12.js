@@ -20,3 +20,6 @@ original.push(30);
 
 console.log(original);
 console.log(copy);
+
+console.log(("b" + "a" + +"a" + "a").toLowerCase());
+console.log((+"b" + "a" + +"a" + "a").toLowerCase());

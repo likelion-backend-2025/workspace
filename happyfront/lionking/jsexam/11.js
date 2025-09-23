@@ -50,7 +50,7 @@ array3[3]();
 
 //[ { name: 'kang' }, 20, 30, [Function (anonymous)] ]
 
-//배열 비구조할당
+//배열 비구조할당   -- 순서가 중요!!
 
 const person = array3[0];
 console.log(person);

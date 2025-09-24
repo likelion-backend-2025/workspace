@@ -17,9 +17,9 @@ const squared2 = [];
 
 const func2 = (n) => squared2.push(n * n);
 
-array.forEach(func2(n));
+array.forEach(func2);
 
-array.forEach(squar(n));
+array.forEach(squar);
 
 function squar(n) {
   return n * n;

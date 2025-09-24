@@ -23,14 +23,14 @@ const { age, username, email } = user;
 
 console.log(age);
 
-function print(person) {
+function print2(person) {
   const text = `${person.username} 의 나이는 ${person.age} 이고 이메일은 ${person.email} 입니다.`;
   console.log(text);
 }
 
 //구조분해 이해되시나요??
 
-function print({ username, age, email }) {
+function print2({ username, age, email }) {
   const text = `${username} 의 나이는 ${age} 이고 이메일은 ${email} 입니다.`;
   console.log(text);
 }

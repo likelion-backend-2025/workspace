@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <h2 id="number">0</h2>
+    <div>
+      <button id="increase">+1</button>
+      <button id="decrease">-1</button>
+
+      <!-- 
+      //태그안에 value를 꺼내려면.. 
+        let number = document.getElementById('number').innerHTML; 
+        //이렇게 나온 값은 문자이므로,  연산을 하기 위해서는 형변환이 필요하다.  
+        parseInt(number);   혹은 Number('0');  
+
+      -->
+      <script>
+        const incBtn = document.getElementById("increase");
+        const decBtn = document.getElementById("decrease");
+        const number = document.getElementById("number");
+        incBtn.addEventListener("click", () => {
+          number.innerHTML = parseInt(number.innerHTML) + 1;
+        });
+
+        decBtn.addEventListener("click", () => {
+          number.innerHTML = parseInt(number.innerHTML) - 1;
+        });
+      </script>
+    </div>
+  </body>
+</html>

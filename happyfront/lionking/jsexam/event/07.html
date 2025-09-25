@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo List</title>
+  </head>
+  <body>
+    <ul>
+      <li>할일 1</li>
+      <li>할일 2</li>
+      <li>할일 3</li>
+      <li>할일 4</li>
+      <li>할일 5</li>
+    </ul>
+
+    <label for="todo">할일을 입력하세요.</label>
+    <input type="text" id="todo-value" />
+    <button id="todoBtn">할일 입력</button>
+
+    <script>
+      // todoBtn 이 클릭되면,  input 상자에 입력된 값이 할일 리스트에 추가되도록.
+      // 각 할일을 클릭하면,  alert 창에 할일이 출력되도록 이벤트를 만들어주세요.
+
+      const todoBtn = document.getElementById("todoBtn");
+      //   todoBtn.addEventListener("click", (e) => {
+      //     console.log(e);
+      //     console.log(e.target);
+      //     console.log(e.target.innerText);
+      //   });
+
+      todoBtn.addEventListener("click", function (e) {
+        console.log(e);
+        console.log(e.target);
+        console.log(e.target.innerText);
+        console.log(this.innerHTML);
+      });
+    </script>
+  </body>
+</html>

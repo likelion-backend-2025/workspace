@@ -1,0 +1,24 @@
+<!-- 이벤트 버블링  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="alert('outer-div');">
+      <div onclick="alert('inner-div');">
+        <div onclick="alert('inner-inner_div');">
+          <h1 onclick="alert('h1');">
+            <p onclick="alert('p');">p태그</p>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <button id="btn">클릭</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+      //   console.log(btn);
+
+      //event
+      //소스(대상).addEventListener(이벤트이름(ex click), 이벤트핸들러(함수),[ToCapture])
+      //   btn.addEventListener("click", hi);
+      btn.addEventListener("click", () => {
+        alert("hi~~!!");
+      });
+
+      //   function hi() {
+      //     alert("hi~~!!");
+      //   }
+    </script>
+  </body>
+</html>

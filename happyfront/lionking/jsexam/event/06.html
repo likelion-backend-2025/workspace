@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="05.html" method="get" id="joinForm">
+      이름 : <input type="text" name="name" id="name" /><br />
+      비밀번호 : <input type="password" name="password" id="password" /><br />
+      비밀번호 확인 :
+      <input type="password" name="checkPassword" id="checkPassword" /><br />
+
+      <input type="submit" value="등록" />
+    </form>
+    <script>
+      //이름이 잘 입력 되었는지 체크 -  이름은 반드시 입력되어야 합니다.
+      //비밀번호도 값이 잘 입력 되었고, 두개의 비밀번호가 일치하는지 체크  - 비밀번호는 일치해야합니다.
+
+      //submit   --  이벤트 이름
+      //input요소.value  -- input 상자의 값을 꺼낼 수 있음.
+      const join = document.getElementById("joinForm");
+      join.addEventListener("submit", (e) => {
+        const [id, pw, chpw] = document.querySelectorAll("input");
+
+        if (id.value === "") {
+          alert("아이디를 입력해주세요.");
+          id.focus();
+        } else if (pw.value === "") {
+          alert("패스워드를 입력해주세요.");
+          pw.focus();
+        } else if (chpw.value == "") {
+          alert("비밀번호를 확인해 주세요.");
+          chpw.focus();
+        } else {
+          if (pw.value != chpw.value) {
+            alert("비밀번호가 일치하지 않습니다.");
+            pw.focus();
+          } else {
+            alert("회원가입 성공!!");
+            return;
+          }
+        }
+
+        e.preventDefault();
+        return;
+      });
+    </script>
+  </body>
+</html>

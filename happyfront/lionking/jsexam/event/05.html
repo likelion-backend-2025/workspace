@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      .pink {
+        position: relative;
+        background-color: pink;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .red {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pink">
+      <div class="red"></div>
+    </div>
+
+    <script>
+      let pinkbox = document.querySelector(".pink");
+      let redbox = document.querySelector(".red");
+      let body = document.querySelector("body");
+      let html = document.querySelector("html");
+      //캡쳐링 여부와 stopPropagation을 바꿔가면서 테스트 해본다!!!
+      pinkbox.addEventListener(
+        "click",
+        function (e) {
+          e.stopPropagation();
+          alert("pink box!!");
+        },
+        true
+      );
+      redbox.addEventListener(
+        "click",
+        function (e) {
+          //   e.stopPropagation();
+          alert("red box");
+        },
+        true
+      );
+
+      body.addEventListener(
+        "click",
+        function (e) {
+          //   e.stopPropagation();
+          alert("body box");
+        },
+        true
+      );
+
+      html.addEventListener(
+        "click",
+        function (e) {
+          //   e.stopPropagation();
+          alert("html box");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <button id="btn">버튼1</button>
+    <div class="div"></div>
+    <button id="btn2">버튼2</button>
+    <div class="div2"></div>
+
+    <!-- 원하는 요소를 찾아보세요.  -->
+
+    <script>
+      // 버튼1을 클릭하면 배경화면을 노랑색으로바꾸기
+      //버튼 2를 클릭하면 class가 div2 인것에 자기 이름 쓰기!!
+      document.getElementById("btn").addEventListener("click", () => {
+        document.body.style.backgroundColor = "yellow";
+      });
+      document.querySelector("#btn2").addEventListener("click", () => {
+        document.querySelector(".div2").innerHTML = "<h1>강경미</h1>";
+      });
+    </script>
+  </body>
+</html>

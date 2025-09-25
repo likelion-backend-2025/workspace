@@ -29,11 +29,24 @@
       //     console.log(e.target.innerText);
       //   });
 
+      const ul = document.querySelector("ul");
+      const todo = document.getElementById("todo-value");
       todoBtn.addEventListener("click", function (e) {
-        console.log(e);
-        console.log(e.target);
-        console.log(e.target.innerText);
-        console.log(this.innerHTML);
+        // console.log(e);
+        // console.log(e.target);
+        // console.log(e.target.innerText);
+        // console.log(this.innerHTML);
+
+        const li = document.createElement("li");
+        const text = document.createTextNode(todo.value);
+        li.appendChild(text);
+        ul.appendChild(li);
+        todo.value = "";
+      });
+      ul.addEventListener("click", (e) => {
+        // console.log(e.target);
+        // console.log(e.target.innerText);
+        alert(e.target.innerText);
       });
     </script>
   </body>

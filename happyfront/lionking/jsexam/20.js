@@ -11,7 +11,7 @@ function work() {
 }
 
 // work(); // 시간이 많이 걸리는 작업!!
-setTimeout(work, 0);
+setTimeout(work, 0);  //3000  정확히 3초있다 실행해!! 는 아니다.  
 
 console.log("다음작업");
 

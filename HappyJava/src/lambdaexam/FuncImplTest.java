@@ -26,10 +26,16 @@ public class FuncImplTest {
 
 
         FuncImpl funcImpl = new FuncImpl();
-        funcImpl.run();
+        funcImpl.run();  //이 코드가 어렵지는 않으시죠?
+
 
         funcTest.run();
 
         funcTest2.run();
+
+// DoubleInter 인터페이스는 메서드가 2개 정의되어 있으므로, 람다식으로 표현 불가!!!
+//        DoubleInter doubleInter = ()->{
+//            System.out.println("오류@@@  ");
+//        };
     }
 }

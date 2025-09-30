@@ -14,7 +14,7 @@ public class StreamCreation {
         list.stream()
                 .filter(s -> s.startsWith("J"))
                 .forEach(s-> System.out.println(s));
-        
+
         System.out.println("=".repeat(50));
 
         //처리가 좀 헷갈리시는분들은 stream을 쓰지 않았다면 어떻게 구현하지??
@@ -40,6 +40,8 @@ public class StreamCreation {
         //이미 사용된 stream 을 다시 쓸 수 있을까요???
         System.out.println("=".repeat(50));
         stream.forEach(System.out::println);
+
+//        각 컬렉션에서 stream을 생성해보고  filter 혹은 forEach 를 적용해보세요.
 
 //
     }

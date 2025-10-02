@@ -15,16 +15,14 @@ public class ChatServer {
 
     private static void broadcast(String message, ClientHandler sender){
         for(ClientHandler client: clients){
-//            if(!client.equals(sender)){
-//                System.out.println("broadcasting::"+message);
-//                client.sendMessage(message);
-//            }else{
-//                client.sendMessage("내가 보낸메시지 ::"+message);
-//                System.out.println("broadcasted me::"+message);
-//            }
-            if(client != sender){
-                client.sendMessage(message);
+            if(!client.equals(sender)){
+                client.sendMessage(sender.nickname+":::"+message);
+            }else{
+                client.sendMessage("내가 보낸메시지 ::"+message);
             }
+//            if(client != sender){
+//                client.sendMessage(message);
+//            }
         }
     }
 

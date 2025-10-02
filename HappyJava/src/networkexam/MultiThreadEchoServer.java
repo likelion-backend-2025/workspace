@@ -56,6 +56,7 @@ public class MultiThreadEchoServer {
                 while((inputLine = in.readLine()) != null){
                     System.out.println(clientaddress +"로 부터 받은 메시지 :: "+inputLine);
                     out.println("Echo::"+inputLine);
+//                    out.flush();
 
                     if("bye".equals(inputLine)){
                         break;

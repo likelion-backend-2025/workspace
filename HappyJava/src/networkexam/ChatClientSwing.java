@@ -83,7 +83,7 @@ public class ChatClientSwing extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            ChatClientSwing client = new ChatClientSwing("localhost", 12345);
+            ChatClientSwing client = new ChatClientSwing("15.164.228.241", 8888);
             client.setVisible(true);
         });
     }

@@ -2,6 +2,7 @@ package sample.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import sample.bean.Book;
 import sample.bean.MyBean;
 
 public class MyBeanConfig {
@@ -27,5 +28,10 @@ public class MyBeanConfig {
         mybean.setName("kang kyung mi");
         mybean.setCount(10);
         return mybean;
+    }
+
+    @Bean
+    public Book book(){
+        return new Book("happy spring","carami","124bo22");
     }
 }

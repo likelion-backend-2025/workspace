@@ -2,6 +2,7 @@ package sample.run;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import sample.bean.Book;
 import sample.bean.MyBean;
 import sample.config.MyBeanConfig;
 
@@ -41,6 +42,9 @@ public class SpringExam01 {
         System.out.println(mybean3.getCount());
 
 
+
+        Book book = context.getBean("book",Book.class);  //lookup
+        System.out.println(book);
 
     }
 }

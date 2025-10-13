@@ -15,4 +15,17 @@ public class MyBeanConfig {
     public MyBean mybean(){
         return new MyBean();
     }
+
+    @Bean
+    public MyBean mybean2(){
+        return new MyBean();
+    }
+
+    @Bean
+    public MyBean mybean3(){
+        MyBean mybean = new MyBean();
+        mybean.setName("kang kyung mi");
+        mybean.setCount(10);
+        return mybean;
+    }
 }

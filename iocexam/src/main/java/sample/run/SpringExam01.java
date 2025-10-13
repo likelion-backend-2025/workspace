@@ -28,13 +28,17 @@ public class SpringExam01 {
         System.out.println(mybean.getName());
 
         //타입을 통해서도 주입 받을 수 있어요!!
-        MyBean mybean2 = context.getBean(MyBean.class);
-
+//        MyBean mybean2 = context.getBean(MyBean.class);
+        MyBean mybean2 = context.getBean("mybean2",MyBean.class);
         System.out.println(mybean2.getName());
 
         if(mybean == mybean2){
             System.out.println("mybean == mybean2 같은 인스턴스입니다. ");
         }
+
+        MyBean mybean3 = context.getBean("mybean3",MyBean.class);
+        System.out.println(mybean3.getName());
+        System.out.println(mybean3.getCount());
 
 
 

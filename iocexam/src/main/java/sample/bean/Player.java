@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Player {
     private String name;
+//    @Autowired
     private Dice dice; // 실행될 때 주사위를 주입받을것!!  (의존성 주입: DI)
     //--필드를통한 주입
 
@@ -20,6 +21,7 @@ public class Player {
         System.out.println("player() 생성");
     }
 
+//    @Autowired
     public Player(Dice dice){
         this.dice = dice;
         System.out.println("player(dice) 생성자 생성");
@@ -28,9 +30,10 @@ public class Player {
 
     //설정자를 통해서 주입해줄께요!!  라고 한다면 뭘 마련해야할까요?
 
-
+    @Autowired
     public void setDice(Dice dice) {
         this.dice = dice;
+    System.out.println("setDice  설정자를 통한 dice 주입");
     }
 
 

@@ -1,8 +1,12 @@
 package sample.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dice {
     private int face;
     public Dice(){
+        this.face = 6;
         System.out.println("Dice() 실행!!");
     }
     public Dice(int face){

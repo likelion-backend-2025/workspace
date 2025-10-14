@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Dice {
     private int face;
     public Dice(){
-        this.face = 6;
+//        this.face = 6;
         System.out.println("Dice() 실행!!");
     }
     public Dice(int face){

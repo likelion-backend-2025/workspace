@@ -2,13 +2,18 @@ package org.example.iocexam.controller;
 
 import org.example.iocexam.domain.User;
 import org.example.iocexam.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class UserController {
     private UserService userService;
 
     public UserController() {
         System.out.println("UserController() 실행");
     }
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
         System.out.println("UserController(UserService) 실행!");

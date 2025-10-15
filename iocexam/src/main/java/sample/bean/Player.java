@@ -3,7 +3,7 @@ package sample.bean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Player {
     private String name;
 //    @Autowired

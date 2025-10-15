@@ -2,7 +2,7 @@ package sample.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Dice {
     private int face;
     public Dice(){

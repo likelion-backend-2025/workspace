@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-@Repository
+//@Repository
 public class UserDaoImpl implements UserDao {
     @Override
     public User getUser(String name) {

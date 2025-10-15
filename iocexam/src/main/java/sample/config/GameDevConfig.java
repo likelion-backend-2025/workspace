@@ -11,9 +11,9 @@ import sample.bean.Player;
 
 import java.util.List;
 @Configuration
-@Profile("prod")
+@Profile("dev")
 @PropertySource({"classpath:game.properties"})
-public class GameConfig {
+public class GameDevConfig {
     //Dice Bean 을 등록해볼까요?
 
     @Value("${face}")
@@ -29,7 +29,7 @@ public class GameConfig {
 //        Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("Kang");
+        player.setName("강경미");
         return player;
     }
 
@@ -38,7 +38,7 @@ public class GameConfig {
 //        Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("kim");
+        player.setName("김둘리");
         return player;
     }
 
@@ -47,7 +47,7 @@ public class GameConfig {
 //        Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("hong");
+        player.setName("홍길동");
         return player;
     }
 
@@ -56,7 +56,7 @@ public class GameConfig {
 //        Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("lee");
+        player.setName("이효리");
         return player;
     }
 
@@ -65,7 +65,7 @@ public class GameConfig {
 //        Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("park");
+        player.setName("박지성");
         return player;
     }
 

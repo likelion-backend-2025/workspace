@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     public UserServiceImpl() {}
 
-    @Autowired
+//    @Autowired
     public UserServiceImpl(@Qualifier("userDaoImpl") UserDao userDao) {
         this.userDao = userDao;
     }

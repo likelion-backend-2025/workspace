@@ -4,6 +4,8 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.example.iocexam.domain.User;
 import org.example.iocexam.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import org.springframework.stereotype.Controller;
 public class UserController {
     private UserService userService;
 
+    Logger log = LoggerFactory.getLogger(UserController.class);
+
     public UserController() {
         System.out.println("UserController() 실행");
     }
@@ -19,6 +23,11 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
         System.out.println("UserController(UserService) 실행!");
+        log.info("info UserController(UserService) 실행!");
+        log.trace("trace UserController(UserService) 실행! ");
+        log.warn("warn UserController(UserService) 실행! ");
+        log.error("error UserController(UserService) 실행! ");
+        log.debug("debug UserController(UserService) 실행! ");
     }
 
     public void joinUser(){

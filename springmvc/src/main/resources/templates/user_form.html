@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user form</title>
+</head>
+<body>
+<form method="post">
+    <label for="name">user name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+    <label for="password">user name</label>
+    <input type="text" th:field="*{password}" id="password">
+
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+    <button type="submit">submit</button>
+</form>
+
+</body>
+</html>

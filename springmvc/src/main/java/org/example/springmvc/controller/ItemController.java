@@ -9,15 +9,16 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
+@RequestMapping("/item")
 public class ItemController {
 
-    @GetMapping("/item/form")
+    @GetMapping("/form")
     public String form(){
         System.out.println("form called");
         return "item_form";
     }
 
-    @PostMapping("/item/add")
+    @PostMapping("/add")
     public String add(@ModelAttribute Item item /*@RequestParam("name2") String name, @RequestParam("price2")int price*/){
 
         System.out.println(item.getName());
@@ -30,7 +31,7 @@ public class ItemController {
         return "redirect:/item/list";
     }
 
-    @GetMapping("/item/list")
+    @GetMapping("/list")
     public String list(Model model){
         model.addAttribute("welcomeMessage","안녕하세요, 반갑습니다.");
 

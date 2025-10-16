@@ -6,7 +6,7 @@
 </head>
 <body>
 <form method="post">
-    <label for="name">user name</label>
+    <label for="name" th:object="">user name</label>
     <input type="text" th:field="*{name}" id="name">
     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 

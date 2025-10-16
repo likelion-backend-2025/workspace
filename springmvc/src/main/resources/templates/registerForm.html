@@ -5,8 +5,21 @@
     <title>회원 가입폼</title>
 </head>
 <body>
-<form th:action="@{/register}" >
+<form th:action="@{/user/register}"  th:object="${user}"   method="post">
+    이름 : <input type="text" th:field="*{name}" ><br>
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 
+    아이디 : <input type="text" th:field="*{username}"><br>
+    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+
+    이메일 : <input type="text" th:field="*{email}"><br>
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+
+    비밀번호 : <input type="text" th:field="*{password}"><br>
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+    <input type="submit" value="회원가입"/>
 </form>
 </body>
 </html>

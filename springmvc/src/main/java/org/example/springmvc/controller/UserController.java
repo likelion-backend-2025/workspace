@@ -1,5 +1,6 @@
 package org.example.springmvc.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.example.springmvc.domain.User;
 import org.example.springmvc.domain.UserForm;
@@ -14,10 +15,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    @GetMapping("/abc")
+    public String abc(HttpServletRequest request) {
+        request.setAttribute("name","kang");
+        return "forward:/user/register";
+    }
+
+
+
+
+
     //user정보입력폼
     @GetMapping("/register")
-    public String registerForm(Model model) {
+    public String registerForm(Model model,HttpServletRequest request) {
         model.addAttribute("user", new User());
+        System.out.println(request.getAttribute("name"));
+
+        if(true)
+            throw new RuntimeException("테스트용 예외 발생");
+
         return "registerForm";
     }
 

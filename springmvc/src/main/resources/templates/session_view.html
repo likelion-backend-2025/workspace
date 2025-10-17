@@ -7,12 +7,13 @@
 <body>
 <h1>세션목록보기</h1>
 <ul>
- <!--   <li th:each="cookie:${cookieList}">
-        <span th:text="${cookie}"></span>
-    </li>-->
+    <li th:each="entry:${session}">
+        <span th:text="${entry.key}"></span>:::::
+        <span th:text="${entry.value}"></span>
+    </li>
 </ul>
 <br>
 
-<a href="/cookieForm">쿠키등록</a>
+<a href="/sessionForm">세션등록</a>
 </body>
 </html>

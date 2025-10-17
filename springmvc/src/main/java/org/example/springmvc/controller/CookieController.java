@@ -5,8 +5,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class CookieController {
@@ -37,17 +41,43 @@ public class CookieController {
     }
 
     @GetMapping("cookieView")
-    public String cookieView(HttpServletRequest req) {
+    public String cookieView(HttpServletRequest req, Model model) {
         //클라언트가 가지고 있는 모든 쿠키를 화면에 출력함!!
         Cookie[] cookies = req.getCookies();
+        List<String> cookieList = new ArrayList<>();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 System.out.print(cookie.getName() +":::::"+cookie.getValue());
+                cookieList.add(cookie.getName() +":::::"+cookie.getValue());
             }
             System.out.println();
+            model.addAttribute("cookieList", cookieList);
         }
-
-
         return "cookie_view";
+    }
+
+    //관리자전용페이지가 있다.
+    //이 페이지를 어떻게 관리자에게만 보여주게 할 수 있을까요??
+    @GetMapping("/adminPage")
+    public String adminPage(@CookieValue(name = "admin", defaultValue = "false")String admin) {
+
+        //이사람이 관리자야??
+        if(!admin.equals("false")) {
+            return "admin_page";
+        }else{
+            return "welcome";
+        }
+    }
+
+    //쿠키삭제
+    //브라우저가(클라이언트) 같은 이름의 쿠키를 가질 수 없다.. 같은 이름의 쿠키가 전송되어오면 기존 쿠키와 교체한다!!
+    @GetMapping("/cookieDel")
+    public String cookieDel(HttpServletResponse response) {
+        Cookie cookie = new Cookie("admin", "");  //name 이 중요함.
+        cookie.setMaxAge(0);
+        cookie.setPath("/");
+        response.addCookie(cookie);
+
+        return "redirect:/cookieView";
     }
 }

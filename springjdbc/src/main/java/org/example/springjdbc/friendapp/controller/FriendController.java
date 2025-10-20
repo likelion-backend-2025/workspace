@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.example.springjdbc.friendapp.domain.Friend;
 import org.example.springjdbc.friendapp.service.FriendService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.yaml.snakeyaml.events.Event;
 
 @Controller
 @RequestMapping("/friends")
@@ -21,13 +21,57 @@ public class FriendController {
     }
 
     @PostMapping("/add")
-    public String addFriend(){
+    public String addFriend(@ModelAttribute Friend friend){
+        //서비스에게 이름과 이메일을 보내서 친구정보를 저장해 달라고 할꺼예요.
+//         이때..  서비스에 이름과 이메일을 담은 Friend 객체를 전달할것인지.  name, email을 직접 전달할지..
 
-        return "";
+        Friend saveFriend = friendService.addFriend(friend);
+        System.out.println(saveFriend);
+
+
+        return "redirect:/friends/list";  //임시로 저장되고 다시 친구추가폼을 요청함!!
     }
 
 
     //친구목록보기
+    @GetMapping("/list")
+    public String listFriends(Model model){
+
+        Iterable<Friend> friends = friendService.getFriends();
+        model.addAttribute("friends", friends);
+
+        return  "friends/list";
+    }
+    //친구상세보기
+    @GetMapping("/{id}")
+    public String detailFriend(@PathVariable("id") Long id, Model model){
+        Friend friend = friendService.getFriendById(id);
+        model.addAttribute("friend", friend);
+        return "friends/detail";
+    }
+    //친구정보수정  수정 폼 보여주세요.
+    @GetMapping("/edit/{id}")
+    public String editFriendForm(@PathVariable("id") Long id, Model model){
+        Friend friend = friendService.getFriendById(id);
+        model.addAttribute("friend", friend);
+        return "friends/editform";
+    }
+
+    //수정해주세요.
+    @PostMapping("/edit")
+    public String editFriend(@ModelAttribute Friend friend){
+        System.out.println("editFriend"+friend);
+        friendService.updateFriend(friend);
+        return "redirect:/friends/list";
+    }
+
+    //친구삭제
+    @GetMapping("/delete/{id}")
+    public String deleteFriend(@PathVariable("id") Long id){
+        friendService.deleteFriendById(id);
+        return "redirect:/friends/list";
+    }
+
     //친구정보 수정
     //url 어떻게 사용하는게 좋을까요??
     //ex1) http://localhost:8080/addFriend

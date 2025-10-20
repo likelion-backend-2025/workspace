@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>친구목록보기</title>
+</head>
+<body>
+<h1>친구 목록</h1>
+
+<table th:if="${!friends.empty}">
+    <thead>
+        <tr>
+            <td>아이디</td>
+            <td>이름</td>
+            <td>이메일</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="friend:${friends}">
+            <td th:text="${friend.id}"></td>
+            <td >
+                <a th:href="@{/friends/{id}(id=${friend.id})}"  th:text="${friend.name}"></a>
+            </td>
+            <td th:text="${friend.email}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/friends/add}">친구등록</a>
+</body>
+</html>

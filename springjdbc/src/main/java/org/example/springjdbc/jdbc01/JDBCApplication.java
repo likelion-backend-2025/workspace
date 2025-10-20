@@ -27,10 +27,13 @@ public class JDBCApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        userDao.insertUser(new User("hong","hong@hong.com"));
+//        userDao.insertUser(new User("hong","hong@hong.com"));
 
         List<User> allUsers = userDao.findAllUsers();
 
+        for (User user : allUsers) {
+            System.out.println(user);
+        }
         System.out.println(allUsers.size());
 
         //1. 입력 (insert)
@@ -39,12 +42,12 @@ public class JDBCApplication implements CommandLineRunner {
 //        System.out.println(count+"건 입력성공!!");
 
         //2. 조회 (select)
-        String selectSql = "select * from users";
-        List<User> userList = jdbcTemplate.query(selectSql, new BeanPropertyRowMapper<>(User.class));
-
-        for (User user : userList) {
-            System.out.println(user);
-        }
+//        String selectSql = "select * from users";
+//        List<User> userList = jdbcTemplate.query(selectSql, new BeanPropertyRowMapper<>(User.class));
+//
+//        for (User user : userList) {
+//            System.out.println(user);
+//        }
 
     }
 }

@@ -11,12 +11,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class User {
     private Long id;
-    private String name;
+    private String username;
     private String email;
     private LocalDateTime createdAt;
 
-    public User(String name, String email) {
-        this.name = name;
+    public User(String username, String email) {
+        this.username = username;
         this.email = email;
     }
 }

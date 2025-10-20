@@ -24,6 +24,21 @@ public class MainApplication {
             User user = repository.findById(1L).get();
             System.out.println(user);
 
+            repository.findAll().forEach(System.out::println);
+
+            System.out.println("====================findByName=================");
+            User userKang = repository.findByName("kang");
+            System.out.println(userKang);
+
+
+            System.out.println("=====================findByEmail================");
+            User userCarami = repository.findByEmail("carami222@carami.com").orElse(null);
+            System.out.println(userCarami);
+
+
+            System.out.println("=======================abcUser================");
+            repository.abcUser("test");
+
         };
     }
 }

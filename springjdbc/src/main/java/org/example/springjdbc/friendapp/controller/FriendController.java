@@ -3,6 +3,11 @@ package org.example.springjdbc.friendapp.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.springjdbc.friendapp.domain.Friend;
 import org.example.springjdbc.friendapp.service.FriendService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,9 +40,13 @@ public class FriendController {
 
     //친구목록보기
     @GetMapping("/list")
-    public String listFriends(Model model){
+//    public String listFriends(Model model, @RequestParam(name="page",required = false,defaultValue = "1") int page){
+//
+//
+//        Pageable pageable = PageRequest.of(page -1, 3, Sort.by(Sort.Direction.DESC, "id"));
+    public String listFriends(Model model, @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
 
-        Iterable<Friend> friends = friendService.getFriends();
+        Page<Friend> friends = friendService.getFriends(pageable);
         model.addAttribute("friends", friends);
 
         return  "friends/list";

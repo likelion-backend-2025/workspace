@@ -7,3 +7,8 @@ spring:
     username: spring
     password: spring1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true

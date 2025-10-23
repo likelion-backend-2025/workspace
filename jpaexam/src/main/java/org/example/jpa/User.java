@@ -1,10 +1,9 @@
 package org.example.jpa;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -12,13 +11,17 @@ import lombok.ToString;
 @Setter
 @ToString
 @Table(name = "jpa_users")
+@EqualsAndHashCode
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(name = "user_name")
     private String name;
     private String email;
+
+
 
 //    public User() {} //필수
     public User(String name, String email) {

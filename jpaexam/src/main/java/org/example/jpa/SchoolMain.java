@@ -48,8 +48,40 @@ public class SchoolMain {
         }
     }
 
+    private static void update(){
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        try{
+            School school = entityManager.find(School.class, 4L);
+            school.setName("lion high school");
+
+
+            entityManager.getTransaction().commit();
+        }finally {
+            entityManager.close();
+        }
+    }
+
+
+    private static void delete(){
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        try{
+
+            School school = entityManager.find(School.class, 4L);
+            entityManager.remove(school);
+
+
+            entityManager.getTransaction().commit();
+        }finally {
+            entityManager.close();
+        }
+    }
+
     public static void main(String[] args) {
 //        find();
-        create();
+//        create();
+//        update();
+        delete();
     }
 }

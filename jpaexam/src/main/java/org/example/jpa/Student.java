@@ -17,8 +17,16 @@ public class Student {
     private Long id;
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "school_id")
     private School school; //연관 관계를 알려줄 필요가 있다.
 
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student(String name, School school) {
+        this.name = name;
+        this.school = school;
+    }
 }

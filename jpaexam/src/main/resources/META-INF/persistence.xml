@@ -8,6 +8,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>org.example.jpa.User</class>
         <class>org.example.jpa.Product</class>
+        <class>org.example.jpa.School</class>
+        <class>org.example.jpa.Student</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

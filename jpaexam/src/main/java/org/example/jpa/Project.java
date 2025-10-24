@@ -23,4 +23,8 @@ public class Project {
     @ManyToMany(mappedBy = "projects")
     private Set<Employee> employees = new HashSet<>();
 
+
+    public Project(String title) {
+        this.title = title;
+    }
 }

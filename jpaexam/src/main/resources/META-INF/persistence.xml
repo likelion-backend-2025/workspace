@@ -14,6 +14,9 @@
         <class>org.example.jpa.Book</class>
         <class>org.example.jpa.Person</class>
         <class>org.example.jpa.Passport</class>
+        <class>org.example.jpa.Project</class>
+        <class>org.example.jpa.Employee</class>
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

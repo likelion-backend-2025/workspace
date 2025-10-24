@@ -10,6 +10,8 @@
         <class>org.example.jpa.Product</class>
         <class>org.example.jpa.School</class>
         <class>org.example.jpa.Student</class>
+        <class>org.example.jpa.Author</class>
+        <class>org.example.jpa.Book</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

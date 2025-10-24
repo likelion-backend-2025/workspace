@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import java.util.List;
+
 @Slf4j
 @SpringBootApplication
 public class SpringdatajpaApplication {
@@ -19,10 +22,17 @@ public class SpringdatajpaApplication {
         return args -> {
 
 //user 추가
-            User kanguser = new User("kang","kang@kang.com");
-            userRepository.save(kanguser);
+//            User kanguser = new User("kang","kang@kang.com");
+//            userRepository.save(kanguser);
+//
+//            log.info("user 추가 :: "+ kanguser);
 
-            log.info("user 추가 :: "+ kanguser);
+            userRepository.findByName("kang").forEach(user -> {log.info(user.toString());});
+
+            List<User> userList = userRepository.findByName("carami");
+            for(User user : userList){
+                log.info(user.toString());
+            }
         };
     }
 }

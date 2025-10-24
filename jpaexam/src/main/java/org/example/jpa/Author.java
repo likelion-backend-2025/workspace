@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -20,4 +23,7 @@ public class Author {
     public Author(String name) {
         this.name = name;
     }
+
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
+    private List<Book> books = new ArrayList<>();
 }

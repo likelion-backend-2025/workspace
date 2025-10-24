@@ -6,17 +6,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "books")
+@Table(name="passports")
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-public class Book {
+public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+    private String passportNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "author_id")
-    private Author author;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "person_id")
+    private Person person;
 }

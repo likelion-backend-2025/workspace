@@ -13,7 +13,7 @@ create();
             Employee employee = new Employee("hong");
 
 //            Project project = new Project("lion project");
-            Project project = em.find(Project.class, 2L);
+            em.find(Project.class, 2L)
 
             employee.getProjects().add(project);
             project.getEmployees().add(employee);

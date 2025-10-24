@@ -14,6 +14,7 @@ public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "passport_number")
     private String passportNumber;
 
     @OneToOne(cascade = CascadeType.PERSIST)

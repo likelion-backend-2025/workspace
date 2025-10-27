@@ -72,6 +72,4 @@ public class UserRepositoryTest {
     void findAll(){
         userRepository.findAll().forEach(user -> {System.out.println(user);});
     }
-
-
 }

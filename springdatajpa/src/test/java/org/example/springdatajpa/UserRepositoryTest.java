@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @SpringBootTest
 @Transactional  //테스트가 끝난 후 롤백함!!
 public class UserRepositoryTest {
@@ -71,5 +73,36 @@ public class UserRepositoryTest {
     @Test
     void findAll(){
         userRepository.findAll().forEach(user -> {System.out.println(user);});
+    }
+    @Test
+    void findByEmail(){
+        List<User> users = userRepository.findByEmail("lee@gmail.com");
+
+        assertThat(users).hasSize(1);
+        assertThat(users.get(0).getName()).isEqualTo("lee");
+
+    }
+
+    @Test
+    void findBy_기타(){
+        List<User> nameContainingUsers = userRepository.findByNameContaining("a");
+
+        assertThat(nameContainingUsers).hasSize(2);
+        assertThat(nameContainingUsers).extracting(User::getName).
+                containsExactly("carami","kang");
+
+        List<User> kangUsers = userRepository.findByNameAndEmail("kang", "kang@exam.com");
+        assertThat(kangUsers).hasSize(0);
+        List<User> kangUsers2 = userRepository.findByNameAndEmail("kang", "kang@gmail.com");
+        assertThat(kangUsers2).hasSize(1);
+
+        List<User> kangUser3 = userRepository.findByNameOrEmail("kang", "kang@exam.com");
+        assertThat(kangUser3).hasSize(1);
+    }
+
+    @Test
+    void selectUser(){
+        List<User> kang = userRepository.selectUser("kang");
+        assertThat(kang).hasSize(1);
     }
 }

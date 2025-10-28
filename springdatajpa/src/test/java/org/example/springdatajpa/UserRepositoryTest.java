@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @SpringBootTest
-@Transactional  //테스트가 끝난 후 롤백함!!
+//@Transactional  //테스트가 끝난 후 롤백함!!
 public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;

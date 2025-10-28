@@ -1,0 +1,27 @@
+### POST
+POST http://localhost:8080/api/memos
+Content-Type: application/json
+
+{
+  "content": "like memo!!"
+}
+
+### GET /memos/{id}
+GET http://localhost:8080/api/memos/1
+Accept: application/json
+
+### GET
+GET http://localhost:8080/api/memos
+Accept: application/json
+
+### PUT
+PUT http://localhost:8080/api/memos/1
+Content-Type: application/json
+
+{
+  "content": "carami memo update"
+}
+
+### DELETE
+DELETE http://localhost:8080/api/memos/1
+Accept: application/json

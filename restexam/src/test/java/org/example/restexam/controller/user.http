@@ -1,0 +1,44 @@
+### 사용자 생성
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "kang",
+  "email": "kang@exam.com"
+}
+
+### 사용자 생성 2
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "kim",
+  "email": "kim@exam.com"
+}
+
+### 사용자 생성 3
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "hong",
+  "email": "hong@exam.com"
+}
+
+### 전체 사용자 조회
+GET http://localhost:8080/api/users
+
+### id에 해당하는 사용자 조회
+GET http://localhost:8080/api/users/1
+
+### 사용자 정보 수정
+PUT http://localhost:8080/api/users/1
+Content-Type: application/json
+
+{
+  "name" : "kang_update",
+  "email": "kang_update@exam.com"
+}
+
+### 사용자 삭제
+DELETE http://localhost:8080/api/users/3

@@ -1,0 +1,35 @@
+### 메모생성
+POST http://localhost:8080/api2/memos
+Content-Type: application/json
+
+{
+  "content": "두번째 메모"
+}
+
+### 메모 전체 보기
+GET http://localhost:8080/api2/memos
+
+### id 에 해당하는 메모 조회
+GET http://localhost:8080/api2/memos/1
+
+### 메모수정
+PUT http://localhost:8080/api2/memos/1
+Content-Type: application/json
+
+{
+  "content": "수정된 첫번째 메모"
+}
+
+### 메모수정 - 존재하지 않는 아이디로 수정
+PUT http://localhost:8080/api2/memos/10
+Content-Type: application/json
+
+{
+  "content": "수정된 첫번째 메모"
+}
+
+### 메모삭제
+DELETE http://localhost:8080/api2/memos/1
+
+### 메모삭제 - 존재하지 않는 아이드로 삭제
+DELETE http://localhost:8080/api2/memos/10

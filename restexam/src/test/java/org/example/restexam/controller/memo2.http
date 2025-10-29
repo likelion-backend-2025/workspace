@@ -33,3 +33,16 @@ DELETE http://localhost:8080/api2/memos/1
 
 ### 메모삭제 - 존재하지 않는 아이드로 삭제
 DELETE http://localhost:8080/api2/memos/10
+
+
+### id 에 해당하는 메모 조회  --  xml로 보여주기
+GET http://localhost:8080/api2/memos/1
+Accept: application/xml
+
+
+
+### id 에 해당하는 메모 조회  --  xml로 보여주기
+GET http://localhost:8080/api2/memos/xml/1
+
+### id 에 해당하는 메모 조회  --  jon 보여주기
+GET http://localhost:8080/api2/memos/json/1

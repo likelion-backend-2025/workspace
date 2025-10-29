@@ -69,4 +69,13 @@ public class MemoRest2Controller {
     //5. curl -X DELETE http://localhost:8080/api2/memos/1
 
 
+    @GetMapping(value = "/json/{id}", produces = "application/json")
+    public Memo getMemoJson(@PathVariable("id") Long id) {
+        return memos.getOrDefault(id, null);
+    }
+
+    @GetMapping(value = "/xml/{id}", produces = "application/xml")
+    public Memo getMemoXml(@PathVariable("id") Long id) {
+        return memos.getOrDefault(id, null);
+    }
 }

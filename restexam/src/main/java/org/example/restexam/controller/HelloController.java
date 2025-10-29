@@ -2,6 +2,7 @@ package org.example.restexam.controller;
 
 import org.example.restexam.domain.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,4 +32,5 @@ public class HelloController {
         response.put("timestamp", LocalDateTime.now().toString());
         return response;
     }
+
 }

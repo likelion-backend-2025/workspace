@@ -1,4 +1,4 @@
-### POST
+### 메모 생성
 POST http://localhost:8080/api/memos
 Content-Type: application/json
 
@@ -25,3 +25,4 @@ Content-Type: application/json
 ### DELETE
 DELETE http://localhost:8080/api/memos/1
 Accept: application/json
+

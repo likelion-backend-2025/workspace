@@ -1,0 +1,55 @@
+### 상품 생성
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "노트북",
+  "price": 1500000
+}
+
+### 상품 생성2
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "마우스",
+  "price": 35000
+}
+
+### 상품 생성3
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "키보드",
+  "price": 150000
+}
+
+### 전체 상품 조회
+GET http://localhost:8080/api/products
+
+### 특정 상품 조회
+GET http://localhost:8080/api/products/4
+
+
+
+### 상품 수정
+PUT http://localhost:8080/api/products/4
+Content-Type: application/json
+
+{
+  "name": "마이크",
+  "price": 5000000
+}
+
+### 상품삭제
+DELETE http://localhost:8080/api/products/4
+
+
+### 상품 생성 - 상품명 없이 생성한다면?
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "price": 150000
+}

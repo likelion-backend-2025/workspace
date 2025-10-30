@@ -30,13 +30,16 @@ public class ProductController {
     //url --  http://localhost:8080/api/products  -- post
     @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody ProductDTO productDTO) {
+        System.out.println(productDTO.getName());
 //        if(productDTO.getName() == null && "".equals(productDTO.getName()))
 
         return ResponseEntity.ok(productService.createProduct(productDTO));
     }
     //url --  http://localhost:8080/api/products/{id}  -- put
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> updateProduct(@PathVariable("id")Long id, ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable("id")Long id, @RequestBody ProductDTO productDTO) {
+        System.out.println(productDTO.getName());
+        System.out.println(id);
         productDTO.setId(id);
         return ResponseEntity.ok(productService.updateProduct(productDTO));
     }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Management</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="products.css">
+</head>
+<body>
+<div class="main">
+    <h1>Product Management</h1>
+
+    <h2>Add New Product</h2>
+    <form id="addProductForm">
+        Name: <input type="text" id="productName" /><br />
+        Price: <input type="number" id="productPrice" /><br />
+        <button type="button" onclick="addProduct()">Add Product</button>
+    </form>
+
+    <h2>Products</h2>
+    <ul id="productList"></ul>
+    <script src="products.js"></script>
+</div>
+</body>
+</html>

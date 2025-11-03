@@ -8,11 +8,16 @@ public class SimpleService {
         System.out.println("SimpleService doSomething run!!");
     }
 
+    @TrackTime
     public String doSomething2(){
 
         System.out.println("SimpleService doSomething2 run!!");
         System.out.println("SimpleService doSomething2 run!!");
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("SimpleService doSomething2 run!!");
         System.out.println("SimpleService doSomething2 run!!");
 

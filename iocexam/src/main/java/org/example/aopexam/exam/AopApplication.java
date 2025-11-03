@@ -13,7 +13,7 @@ public class AopApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(SimpleService service, AnotherService anotherService) {
+    public CommandLineRunner commandLineRunner(SimpleService service, AnotherService anotherService,UserController userController) {
         return args -> {
 //            service.doSomething();
             String returnValue = service.doSomething2();
@@ -25,6 +25,8 @@ public class AopApplication {
 //
 //            System.out.println("=============================");
 //            service.hello();
+
+            userController.addUser();
 
 
         };

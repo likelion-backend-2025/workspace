@@ -1,0 +1,4 @@
+2025-10-15 14:10:57.294 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-15 14:10:57.993 [restartedMain] WARN  o.e.i.controller.UserController - warn UserController(UserService) 실행! 
+2025-10-15 14:10:57.993 [restartedMain] ERROR o.e.i.controller.UserController - error UserController(UserService) 실행! 
+2025-10-15 14:10:58.116 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729

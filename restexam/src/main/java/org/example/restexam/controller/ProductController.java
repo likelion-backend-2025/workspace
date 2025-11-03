@@ -19,7 +19,8 @@ public class ProductController {
 
     //url --  http://localhost:8080/api/products  -- get
     @GetMapping
-    public ResponseEntity<List<ProductDTO>> getAllProducts() {
+    public ResponseEntity<List<ProductDTO>> getAllProducts(@RequestHeader("Accept") String acceptHeader) {
+        System.out.println("Accept Header = " + acceptHeader);
         return ResponseEntity.ok(productService.getProducts());
     }
     //url --  http://localhost:8080/api/products/{id}  -- get

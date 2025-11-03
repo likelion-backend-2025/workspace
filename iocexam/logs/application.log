@@ -140,3 +140,24 @@ java.lang.RuntimeException: 강제 발생
 2025-11-03 14:18:48.020 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 2025-11-03 14:21:34.654 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2025-11-03 14:21:35.388 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 14:47:05.466 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:47:06.080 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-11-03 14:50:56.410 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:50:57.010 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-11-03 14:51:49.441 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:51:50.047 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 14:52:16.989 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:52:17.562 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 14:57:28.409 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:57:29.000 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 14:58:48.990 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 14:58:49.574 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 15:00:00.791 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 15:00:01.354 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 15:00:46.856 [restartedMain] INFO  o.e.aopexam.exam2.Exam2Application - Starting Exam2Application using Java 21.0.6 with PID 23824 (C:\devel\likelion\backend-school_19\workspace\iocexam\out\production\classes started by carami in C:\devel\likelion\backend-school_19\workspace\iocexam)
+2025-11-03 15:00:46.857 [restartedMain] INFO  o.e.aopexam.exam2.Exam2Application - The following 1 profile is active: "prod"
+2025-11-03 15:00:46.886 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 15:00:47.479 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 15:00:47.494 [restartedMain] INFO  o.e.aopexam.exam2.Exam2Application - Started Exam2Application in 0.926 seconds (process running for 1.485)
+2025-11-03 15:00:47.499 [restartedMain] INFO  o.e.aopexam.exam2.LoggingAspect - Before executing: UserService.createUser(..) with arguments: [kang, kang@exam.com]
+2025-11-03 15:00:47.501 [restartedMain] INFO  o.e.aopexam.exam2.LoggingAspect - Method UserService.createUser(..) returned: UserDTO{id=1, name='kang', email='kang@exam.com'}

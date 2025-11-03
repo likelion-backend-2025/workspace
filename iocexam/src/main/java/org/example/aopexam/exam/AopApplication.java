@@ -16,14 +16,15 @@ public class AopApplication {
     public CommandLineRunner commandLineRunner(SimpleService service, AnotherService anotherService) {
         return args -> {
 //            service.doSomething();
-            service.doSomething2();
+            String returnValue = service.doSomething2();
+            System.out.println(returnValue);
 
-            System.out.println("=============================");
-
-            anotherService.anotherMethod();
-            
-            System.out.println("=============================");
-            service.hello();
+//            System.out.println("=============================");
+//
+//            anotherService.anotherMethod();
+//
+//            System.out.println("=============================");
+//            service.hello();
 
 
         };

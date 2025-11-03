@@ -58,5 +58,6 @@ public class UserDao {
         System.out.println("User를 삭제하는 코드1");  //핵심관심  target  
 
         transactionBean.endTransaction(); //횡단관심  advice
+//        securityBean.doSomething();
     }
 }

@@ -9,6 +9,7 @@ public class UserFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("UserFilter doFilter() filterChain.doFilter() 실행전!!");
+        System.out.println(Thread.currentThread().getName());
         filterChain.doFilter(servletRequest, servletResponse);
         System.out.println("UserFilter doFilter() filterChain.doFilter() 실행후!!");
     }

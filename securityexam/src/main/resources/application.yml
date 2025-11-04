@@ -7,4 +7,4 @@ server:
   tomcat:
     threads:
       max: 5
-      min-spare: 2
+      min-spare: 3

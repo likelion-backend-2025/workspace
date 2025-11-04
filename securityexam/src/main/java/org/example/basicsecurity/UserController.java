@@ -17,4 +17,10 @@ public class UserController {
         log.info("UserController hello() 실행!!");
         return "api/hello";
     }
+
+    @GetMapping("/api/test")
+    public String test() {
+        log.info("UserController test() 실행!!");
+        return "api/test";
+    }
 }

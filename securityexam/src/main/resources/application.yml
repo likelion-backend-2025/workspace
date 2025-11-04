@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: securityexam
+
+
+server:
+  tomcat:
+    threads:
+      max: 5
+      min-spare: 2

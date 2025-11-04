@@ -4,7 +4,7 @@ import jakarta.servlet.*;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-//@Component
+@Component
 public class UserFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -13,7 +13,7 @@ public class UserFilter implements Filter {
         System.out.println("UserFilter doFilter() filterChain.doFilter() 실행후!!");
     }
 
-    @Override
+
     public void init(FilterConfig filterConfig) throws ServletException {
         System.out.println("UserFilter init()");
     }

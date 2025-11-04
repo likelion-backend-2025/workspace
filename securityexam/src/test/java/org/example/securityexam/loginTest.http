@@ -1,0 +1,17 @@
+# curl test
+
+# curl -i http://localhost:8080   인증없이 요청하면 401  이 정상
+
+# curl -i -u carami:1234 http://localhost:8080   200번이 나와야 정상
+
+### 인증없이 요청
+GET http://localhost:8080
+Accept: */*
+
+### 인증포험 Basic 인증을 포함해서 요청
+GET http://localhost:8080
+Authorization: Basic Y2FyYW1pOjEyMzQ=
+Accept: */* 
+
+
+

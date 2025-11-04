@@ -2,6 +2,10 @@ spring:
   application:
     name: securityexam
 
+  security:
+    user:
+      name: carami
+      password: 1234
 
 server:
   tomcat:

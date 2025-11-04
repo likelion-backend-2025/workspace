@@ -7,5 +7,6 @@ public class UserService {
     public void hellService(){
         System.out.println("UserService   helloService()  실행!!!");
         System.out.println(Thread.currentThread().getName());
+        System.out.println(UserContext.getUser().getName());
     }
 }

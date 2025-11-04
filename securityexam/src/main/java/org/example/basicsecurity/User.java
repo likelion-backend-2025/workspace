@@ -1,4 +1,4 @@
-package org.example.basicsecurity.test;
+package org.example.basicsecurity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

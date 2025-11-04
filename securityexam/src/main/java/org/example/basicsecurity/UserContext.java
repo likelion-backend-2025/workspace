@@ -1,7 +1,5 @@
 package org.example.basicsecurity;
 
-import org.apache.catalina.User;
-
 public class UserContext {
     private static final ThreadLocal<User> userThreadLocal = new ThreadLocal<User>();
 

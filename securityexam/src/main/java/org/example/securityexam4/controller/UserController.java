@@ -31,6 +31,7 @@ public class UserController {
 
     @PostMapping("/userreg")
     public String userreg(@ModelAttribute UserRegisterDTO userRegisterDTO) {
+        System.out.println("user reg!!!  ");
         //사용자가 입력한 username이 이미 시스템에 존재하는지 체크
         if(userService.existsByUsername(userRegisterDTO.getUsername())) {
             log.info("이미 사용중인 아이디 :: "+ userRegisterDTO.getUsername());

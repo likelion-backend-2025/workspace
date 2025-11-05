@@ -49,7 +49,6 @@ public class SecurityConfig {
                                 })
 
                 )
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/logout_carami"))
                 .logout(logout -> logout
 //                        .logoutUrl("/logout_carami")   //post 전용!!   Get방식이 허용하는 것을 위험하다고 판단한다.
                         .logoutSuccessUrl("/hello")

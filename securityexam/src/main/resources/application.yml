@@ -12,3 +12,9 @@ server:
     threads:
       max: 5
       min-spare: 3
+
+logging:
+  level:
+    org:
+      springframework:
+        security: trace

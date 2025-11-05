@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>사용자 정보</title>
+</head>
+<body>
+<h2>로그인 한 사용자 정보</h2>
+
+<div sec:authorize="isAuthenticated()">
+<!--    로그인 한 사용자만 여기가 실행됨.. -->
+    <p> 사용자 이름 ::  <span sec:authentication="name"></span></p>
+    <p> 권한 :: <span sec:authentication="principal.authorities"></span></p>
+</div>
+
+<div sec:authorize="!isAuthenticated()">
+<!--    로그인 하지 않은 사용자에게 보여줄 내용!!-->
+    <p>로그인 하실래요??</p>
+    <a th:href="@{/login}">로그인</a>
+</div>
+
+</body>
+</html>

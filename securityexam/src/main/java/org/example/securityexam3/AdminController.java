@@ -11,4 +11,9 @@ public class AdminController {
     public String list(){
         return "admin list";
     }
+
+    @GetMapping("/super")
+    public String superAdmin(){
+        return "superAdmin";
+    }
 }

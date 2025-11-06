@@ -20,7 +20,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/user/regForm", "/user/userreg","/user/welcome").permitAll()
+                        .requestMatchers("/user/regForm", "/user/userreg","/user/welcome","/user").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/shop/**").hasRole("USER")
                         .anyRequest().authenticated()
@@ -31,7 +31,7 @@ public class SecurityConfig {
                         .loginProcessingUrl("/login")
                         .usernameParameter("username")
                         .passwordParameter("password")
-                        .defaultSuccessUrl("/user/welcome")
+                        .defaultSuccessUrl("/user/welcome",true)
                         .permitAll()
                 );
         http
@@ -41,6 +41,13 @@ public class SecurityConfig {
 
         http
                 .userDetailsService(customUserDetailsService);
+
+
+        http
+                .sessionManagement(session -> session
+                    .maximumSessions(1)  //동시 접속 허용 개수
+                        .maxSessionsPreventsLogin(false)  //디폴트 false - 먼저 로그인한 사용자가 차단.  //두번제 접속 로그인 안됨.
+                );
 
 
 

@@ -59,7 +59,7 @@ public class SecurityConfig {
                 .password(passwordEncoder.encode("1234"))
                 .roles("ADMIN")
                 .build();
-        UserDetails user4  = User.withUsername("superuser")
+        UserDetails user4 = User.withUsername("superuser")
                 .password(passwordEncoder.encode("1234"))
                 .roles("SUPERUSER")
                 .build();

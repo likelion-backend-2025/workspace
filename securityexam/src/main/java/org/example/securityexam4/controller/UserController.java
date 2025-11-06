@@ -40,6 +40,13 @@ public class UserController {
 
         userService.registerUser(userRegisterDTO);
         return "redirect:/user/welcome";
+    }
 
+
+
+    //로그인 폼 요청
+    @GetMapping("/loginform")
+    public String loginForm() {
+        return "exam4/users/loginform";
     }
 }

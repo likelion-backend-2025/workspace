@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>myinfo</title>
 </head>
 <body>
+<h2>내 정보 보기</h2>
+<div sec:authorize="isAuthenticated()">
+    <p>안녕하세요 <span sec:authentication="name"></span>님!! </p>
+    <p>당신의 롤은 : <span sec:authentication="principal.authorities"></span> </p>
 
+    <p>계정 활성화 여부 : <span sec:authentication="principal.enabled"></span> </p>
+</div>
 </body>
 </html>

@@ -18,6 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class UserController {
     private final UserService userService;
+    @GetMapping
+    public String user() {
+        return "exam4/home";
+    }
+
+    @GetMapping("/myinfo")
+    public String myinfo() {
+        return "exam4/myinfo";
+    }
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -35,7 +44,7 @@ public class UserController {
         //사용자가 입력한 username이 이미 시스템에 존재하는지 체크
         if(userService.existsByUsername(userRegisterDTO.getUsername())) {
             log.info("이미 사용중인 아이디 :: "+ userRegisterDTO.getUsername());
-            return "redirect:/user/regForm";
+            return "exam4/users/userreg-error";
         }
 
         userService.registerUser(userRegisterDTO);

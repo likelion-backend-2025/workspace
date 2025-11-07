@@ -1,4 +1,4 @@
-```markdown
+
 # LionBoard - Spring Boot REST API 게시판
 
 Spring Boot와 Spring Security를 활용한 RESTful API 기반 게시판 프로젝트입니다.

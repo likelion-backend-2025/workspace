@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: lionboard
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/restdb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: spring
+    password: spring1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+

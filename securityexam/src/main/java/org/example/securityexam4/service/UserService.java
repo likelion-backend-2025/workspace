@@ -8,6 +8,7 @@ import org.example.securityexam4.repository.RoleRepository;
 import org.example.securityexam4.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,6 +27,7 @@ public class UserService {
 
 
     //회원가입
+    @Transactional
     public User registerUser(UserRegisterDTO registerDTO) {
         //DTO에 가져온 값을 엔티티에 옮겨 담을 필요가 있다.
         User user = new User();

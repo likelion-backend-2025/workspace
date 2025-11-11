@@ -32,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         userBuilder.roles(
                 user.getRoles()
                         .stream()
-                        .map(Role::getName)
+                        .map(Role::getName)//내부적으로  ROLE_  붙혀서 넣어줌!!
                         .toList()
                         .toArray(new String[0])
         );

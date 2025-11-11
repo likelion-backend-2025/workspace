@@ -26,7 +26,7 @@ public class BasicJwtApplication {
             );
             System.out.println(accessToken);
 
-            String refreshToken = jwtTokenizer.refreshAccessToken(
+            String refreshToken = jwtTokenizer.createRefreshToken(
                     1L,
                     "carami@carami.com",
                     "carami",

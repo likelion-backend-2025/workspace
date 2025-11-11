@@ -26,7 +26,7 @@ public class JwtExample {
         //2. JWT 생성
         String jwt = Jwts.builder()
                 .issuer("lion-auth")//토큰 누가 발급한거야.
-                .subject("carami")
+                .subject("carami")//loginid
                 .audience().add("lion-server").add("lion-frontserver").and()
                 .expiration(new Date(System.currentTimeMillis() + 3600 * 1000)) //1시간
                 .notBefore(new Date()) //지금부터가능
@@ -44,7 +44,7 @@ public class JwtExample {
             Claims claim = Jwts.parser()
                     .verifyWith(secretKey2)
                     .requireIssuer("lion-auth")
-                    .requireAudience("lion-server2")
+                    .requireAudience("lion-server")
                     .build()
                     .parseSignedClaims(jwt)
                     .getPayload();

@@ -26,6 +26,8 @@ repositories {
 
 dependencies {
 
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+
 //    jwt
     implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'

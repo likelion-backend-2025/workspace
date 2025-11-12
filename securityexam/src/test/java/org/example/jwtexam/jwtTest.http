@@ -1,0 +1,134 @@
+### ---------------------------------------
+### 1. 로그인 (Authentication) 시나리오
+### ---------------------------------------
+
+### [성공] 1. 정상 로그인 (토큰 발급)
+# @name loginSuccess
+# @no-redirect
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "carami",
+  "password": "1234"
+}
+
+> {%
+    client.global.set("accessToken", response.body.accessToken);
+    client.global.set("refreshToken", response.body.refreshToken);
+%}
+
+### [저장] 응답 쿠키에서 accessToken 변수 저장
+# loginSuccess 응답의 Set-Cookie 헤더에서 accessToken 값을 'accessToken' 변수에 저장합니다.
+# IntelliJ HTTP Client가 자동으로 쿠키 jar를 관리하지만, 명시적 테스트를 위해 변수화합니다.
+# 'accessToken' 쿠키 값을 변수에 저장합니다.
+# 'refreshToken' 쿠키 값을 변수에 저장합니다.
+
+
+### [실패] 2. 로그인 실패 (비밀번호 오류)
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "lion",
+  "password": "wrongpassword"
+}
+
+### ---
+
+### [실패] 3. 로그인 실패 (존재하지 않는 ID)
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "ghost",
+  "password": "1234"
+}
+
+### ---
+
+### [실패] 4. 로그인 실패 (Validation 오류 - username 없음)
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "password": "1234"
+}
+
+### ---------------------------------------
+### 2. 인가 (Authorization) 시나리오
+### ---------------------------------------
+
+### [성공] 5. 쿠키를 이용한 API 접근
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken={{accessToken}}
+
+### ---
+
+### [성공] 6. Authorization 헤더를 이용한 API 접근
+# (참고: JwtAuthenticationFilter가 헤더도 읽는다는 가정 하에)
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Authorization: Bearer {{accessToken}}
+
+### ---
+
+### [실패] 7. 인증 없이 API 접근 (토큰 없음)
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+
+### ---
+
+### [실패] 8. 인가 실패 (토큰 손상)
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken={{accessToken}}123INVALID
+
+### ---
+
+### [실패] 9. 인가 실패 (시그니처 위조 - jwt.io에서 수정 필요)
+# 1. {{accessToken}} 값을 복사
+# 2. jwt.io 에서 payload 수정 후, 시그니처가 유효하지 않은 토큰을 아래에 붙여넣기
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken=...위조된토큰...
+
+### ---------------------------------------
+### 3. 토큰 생명주기 (Lifecycle) 시나리오
+### ---------------------------------------
+
+### [실패] 10. Access Token 만료
+# (테스트 전 access-expiration-ms를 10초(10000L)로 설정하고 서버 재시작 필요)
+# 1. [1. 정상 로그인]을 실행하여 토큰을 받습니다.
+# 2. 10초 이상 기다립니다.
+# 3. 이 요청을 실행하여 "만료된 토큰" 401 오류가 발생하는지 확인합니다.
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken={{accessToken}}
+
+### ---
+
+### [성공] 11. Refresh Token으로 토큰 갱신
+# (위 10번 테스트 직후에 실행)
+# @no-cookie-jar
+POST http://localhost:8080/api/refreshToken
+Cookie: refreshToken={{refreshToken}}
+
+> {%
+    client.global.set("accessToken", response.body.accessToken);
+    client.global.set("refreshToken", response.body.refreshToken);
+%}
+### ---
+
+### [성공] 12. 갱신된 Access Token으로 API 접근
+# (위 11번 테스트 직후에 실행)
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken={{accessToken}}
+
+
+### [실패] 13. Access Token으로 갱신 시도
+# @no-cookie-jar
+POST http://localhost:8080/api/refreshToken
+Cookie: refreshToken={{accessToken}}

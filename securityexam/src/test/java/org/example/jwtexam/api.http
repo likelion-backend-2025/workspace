@@ -1,4 +1,4 @@
-POST http://localhost:8080/login
+POST http://localhost:8080/api/login
 Content-Type: application/json
 
 {
@@ -7,9 +7,54 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/welcome
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYXJhbWkiLCJlbWFpImNhcmFtaUBuYXRlLmNvbSIsInVzZXJJZCI6MSwibmFtZSI6IuqwleqyveuvuCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpYXQiOjE3NjI5MjE1NDcsImV4cCI6MTc2MjkyMzM0N30.lpGPhyrhHfJq-9MdjPFIBP18WPw_BzPUQRBbZXPiMJw
+GET http://localhost:8080/api/welcome
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYXJhbWkiLCJlbWFpbCI6ImNhcmFtaUBuYXRlLmNvbSIsInVzZXJJZCI6MSwibmFtZSI6IuqwleqyveuvuCIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJpYXQiOjE3NjI5MjI3ODAsImV4cCI6MTc2MjkyNDU4MH0.0OYwJorHP2Nr4jn7uRogMYP1Pj3p2pyNWH-kvVk0m7o
 
 ###
-GET http://localhost:8080/welcome
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
 Cookie: accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYXJhbWkiLCJlbWFpbCI6ImNhcmFtaUBuYXRlLmNvbSIsInVzZXJJZCI6MSwibmFtZSI6IuqwleqyveuvuCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpYXQiOjE3NjI5MjE1NDcsImV4cCI6MTc2MjkyMzM0N30.lpGPhyrhHfJq-9MdjPFIBP18WPw_BzPUQRBbZXPiMJw
+
+
+
+###
+GET http://localhost:8080/api/welcome
+
+### 1. 정상 로그인
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "carami",
+  "password": "1234"
+}
+
+> {%
+    client.global.set("accessToken", response.body.accessToken);
+    client.global.set("refreshToken", response.body.refreshToken);
+%}
+
+
+### 2. 로그인 실패
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "password": "1234"
+}
+
+
+### [출력] 저장된 토큰 확인 (디버깅용)
+# @no-cookie-jar
+GET http://localhost:8080/api/welcome
+Cookie: accessToken={{accessToken}}
+
+
+###
+GET http://localhost:8080/api/welcome
+Authorization: Bearer {{accessToken}}
+
+
+###
+
+GET http://localhost:8080/api/welcome

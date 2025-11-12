@@ -1,0 +1,15 @@
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "carami",
+  "password": "1234"
+}
+
+###
+GET http://localhost:8080/welcome
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYXJhbWkiLCJlbWFpImNhcmFtaUBuYXRlLmNvbSIsInVzZXJJZCI6MSwibmFtZSI6IuqwleqyveuvuCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpYXQiOjE3NjI5MjE1NDcsImV4cCI6MTc2MjkyMzM0N30.lpGPhyrhHfJq-9MdjPFIBP18WPw_BzPUQRBbZXPiMJw
+
+###
+GET http://localhost:8080/welcome
+Cookie: accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYXJhbWkiLCJlbWFpbCI6ImNhcmFtaUBuYXRlLmNvbSIsInVzZXJJZCI6MSwibmFtZSI6IuqwleqyveuvuCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpYXQiOjE3NjI5MjE1NDcsImV4cCI6MTc2MjkyMzM0N30.lpGPhyrhHfJq-9MdjPFIBP18WPw_BzPUQRBbZXPiMJw

@@ -64,7 +64,7 @@ public class CustomOAuth2AuthenticationSuccessHandler implements AuthenticationS
         DefaultOAuth2User oauthUser = (DefaultOAuth2User) token.getPrincipal();
 
         //깃헙 속성에서 id, name  을 추출
-        String socialId = String.valueOf(oauthUser.getAttribute("social_id"));
+        String socialId = String.valueOf(oauthUser.getAttributes().get("id"));
         //소셜에서 정보가 비공개 일때..  정보가 없을 수 있어요.
 //        "name" 없다면..  "login"
 //        name 이라는 속성이 존재하지 않는다면.. login 이라고 속성을 줘서 값을 꺼내는데...
@@ -106,7 +106,7 @@ public class CustomOAuth2AuthenticationSuccessHandler implements AuthenticationS
         String redirect = "/registerSocialUser?provider="+provider
                 +"&socialId="+url(socialId)
                 +"&name="+url(name)
-                +"&uuid"+url(socialLoginInfo.getUuid());
+                +"&uuid="+url(socialLoginInfo.getUuid());
 
         response.sendRedirect(redirect);
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보 등록</title>
+</head>
+<body>
+<div class="container">
+    <h1>환영합니다!</h1>
+    <p>기본 회원 정보를 등록해주세요.</p>
+    <form th:action="@{/saveSocialUser}" method="post">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" th:value="${name}"> <br>
+
+        <label for="username">사용자 ID</label>
+        <input type="text" id="username" name="username"> <br>
+
+        <label for="email">email</label>
+        <input type="text" id="email" name="email">  <br>
+
+        <input type="hidden" name="socialId" th:value="${socialId}">
+        <input type="hidden" name="provider" th:value="${provider}">
+        <input type="hidden" name="uuid" th:value="${uuid}">
+        <div>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">이용약관과 개인정보취급방침에 동의합니다.</label>
+        </div>
+
+        <div class="buttons">
+            <button type="button" onclick="window.location.href='/'">취소</button>
+            <button type="submit">가입</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

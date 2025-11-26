@@ -1,0 +1,62 @@
+services:
+  api1:
+    image: my-spring-app:1.0
+    container_name: api1
+    hostname: api1
+    environment:
+      - SERVER_PORT=8080
+    ports:
+      - "8081:8080"
+    networks:
+      - spring-net
+
+  api2:
+    image: my-spring-app:1.0
+    container_name: api2
+    hostname: api2
+    environment:
+      - SERVER_PORT=8080
+    ports:
+      - "8082:8080"
+    networks:
+      - spring-net
+
+  api3:
+    image: my-spring-app:1.0
+    container_name: api3
+    hostname: api3
+    environment:
+      - SERVER_PORT=8080
+    ports:
+      - "8083:8080"
+    networks:
+      - spring-net
+
+  nginx1:
+    image: mynginx:1.0
+    container_name: nginx1
+    ports:
+      - "8088:80"
+    networks:
+      - spring-net
+    depends_on:
+      - api1
+      - api2
+      - api3
+  nginx2:
+    image: mynginx:1.0
+    container_name: nginx2
+    ports:
+      - "8089:80"
+    networks:
+      - spring-net
+    depends_on:
+      - api1
+      - api2
+      - api3
+
+
+
+networks:
+  spring-net:
+    driver: bridge

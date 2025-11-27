@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: todoapp
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/tododb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: todouser
+    password: todo1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+
+server:
+  port: 8088

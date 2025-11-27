@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spring Boot와 연동되는 Todo 리스트 애플리케이션">
+    <title>Todo List - Spring Boot</title>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+</head>
+<body>
+<div class="todo-list-template">
+    <!-- 타이틀 -->
+    <div class="title">
+        📝 My To Do List
+    </div>
+
+    <!-- 입력 폼 -->
+    <section class="form-wrapper">
+        <div class="form">
+            <input
+                    type="text"
+                    id="myInput"
+                    placeholder="할 일을 입력하세요..."
+                    aria-label="할 일 입력"
+                    autocomplete="off"
+            />
+            <div class="add-button" role="button" tabindex="0">추가</div>
+        </div>
+    </section>
+
+    <!-- Todo 목록 -->
+    <section class="todos-wrapper">
+        <ul id="todo-item-list" role="list"></ul>
+    </section>
+</div>
+
+<!-- JavaScript -->
+<script src="todo.js"></script>
+</body>
+</html>

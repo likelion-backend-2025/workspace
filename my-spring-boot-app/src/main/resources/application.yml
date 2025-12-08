@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: my-spring-boot-app
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/myappdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul}
+    username: ${SPRING_DATASOURCE_USERNAME:myappuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:myapppassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA ??
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+

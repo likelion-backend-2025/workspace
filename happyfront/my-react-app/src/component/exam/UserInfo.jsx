@@ -1,4 +1,5 @@
 function UserInfo() {
+  console.log("👌 UserInfo 실행!!");
   const userName = "kimg";
   const age = 25;
   return (

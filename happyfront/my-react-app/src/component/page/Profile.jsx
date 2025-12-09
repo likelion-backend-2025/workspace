@@ -1,6 +1,6 @@
-function Profile() {
-  const name = "강멋사";
-  const hobbies = ["코딩", "스키", "운동", "독서"];
+function Profile({ name, hobbies }) {
+  //   const name = "강멋사";
+  //   const hobbies = ["코딩", "스키", "운동", "독서"];
 
   return (
     <div>

@@ -8,6 +8,7 @@ const UseStateExam1 = () => {
   const handleClick = () => {
     // count += 1; //이 코드 실행될까요?
     setCount(count + 1);
+    console.log(count);
   };
 
   return (

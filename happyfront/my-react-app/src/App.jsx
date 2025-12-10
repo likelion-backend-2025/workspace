@@ -15,6 +15,10 @@ import ParentComponent2 from "./component/exam/ParentComponent2";
 import ChildrenExam from "./component/exam/ChildrenExam";
 import Layout from "./component/exam/Layout";
 import Dashboard from "./component/exam/Dashboard";
+import LoginStatus from "./component/exam/LoginStatus";
+import FruitList from "./component/exam/FruitList";
+import CallbackExam from "./component/exam/CallbackExam";
+import TodoComponent from "./component/todo/TodoComponent";
 
 function App() {
   console.log("👌 App 실행!!");
@@ -31,7 +35,14 @@ function App() {
         <p>여기는 main 영역입니다. </p>
         <button>자세히 보기</button>
       </Layout> */}
-      <Dashboard />
+      {/* <Dashboard />
+
+      <LoginStatus hasNewMessage={false} messageCount={3} />
+
+      <FruitList /> */}
+
+      {/* <CallbackExam /> */}
+      <TodoComponent />
     </>
   );
 }

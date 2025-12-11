@@ -19,6 +19,11 @@ import LoginStatus from "./component/exam/LoginStatus";
 import FruitList from "./component/exam/FruitList";
 import CallbackExam from "./component/exam/CallbackExam";
 import TodoComponent from "./component/todo/TodoComponent";
+import UseRefExam from "./component/useRef/UseRefExam";
+import MyInputBox from "./component/exam/MyInpuBox";
+import MultiInputBox from "./component/exam/MultiInputBox";
+import UseEffectExam from "./component/useEffect/UseEffectExam";
+import UseEffectToggle from "./component/useEffect/UseEffectToggle";
 
 function App() {
   console.log("👌 App 실행!!");
@@ -42,7 +47,12 @@ function App() {
       <FruitList /> */}
 
       {/* <CallbackExam /> */}
-      <TodoComponent />
+      {/* <TodoComponent /> */}
+      {/* <UseRefExam /> */}
+      {/* <MyInputBox /> */}
+      {/* <MultiInputBox /> */}
+      {/* <UseEffectExam /> */}
+      <UseEffectToggle />
     </>
   );
 }

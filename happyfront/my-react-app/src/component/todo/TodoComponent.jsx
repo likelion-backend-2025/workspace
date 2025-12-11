@@ -16,11 +16,15 @@ function TodoComponent() {
   const addTodo = (text) => {
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id != id));
+  };
   return (
     <div>
       <TodoInput onAdd={addTodo} />
 
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={deleteTodo} />
     </div>
   );
 }

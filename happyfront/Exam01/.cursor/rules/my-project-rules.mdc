@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+- react 프로젝트를 생성할 땐 vite를 사용하여 생성한다.
+- typescript는 사용하지 않는다.
+- next.js는 사용하지 않는다.
+- jsx에 css는 내장시킨다.
+ 

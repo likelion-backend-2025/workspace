@@ -1,4 +1,4 @@
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, onDelete }) => {
   return (
     <li key={todo.id}>
       <input type="checkbox" checked={todo.completed} />
@@ -9,6 +9,7 @@ const TodoItem = ({ todo }) => {
       >
         {todo.text}
       </span>
+      <button onClick={() => onDelete(todo.id)}>삭제</button>
     </li>
   );
 };

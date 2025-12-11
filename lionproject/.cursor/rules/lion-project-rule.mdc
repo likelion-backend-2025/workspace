@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+- 프론트엔드 프로젝트는 frontend/
+- 백엔드 프로젝트는 backend/
+- 프론트엔드 프로젝트는 react, javascript, vite 를 사용. typescript는 사용하지 않음
+- 백엔드 프로젝트는 Spring boot 3.4.x, JDK 21, MySQL 8.0, Spring Data JPA 를 사용해서 web API를 개발함. 

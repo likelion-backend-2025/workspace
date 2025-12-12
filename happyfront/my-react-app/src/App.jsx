@@ -24,6 +24,7 @@ import MyInputBox from "./component/exam/MyInpuBox";
 import MultiInputBox from "./component/exam/MultiInputBox";
 import UseEffectExam from "./component/useEffect/UseEffectExam";
 import UseEffectToggle from "./component/useEffect/UseEffectToggle";
+import BoardComponent from "./component/board/BoardComponent";
 
 function App() {
   console.log("👌 App 실행!!");
@@ -53,6 +54,7 @@ function App() {
       {/* <MultiInputBox /> */}
       {/* <UseEffectExam /> */}
       <UseEffectToggle />
+      <BoardComponent />
     </>
   );
 }

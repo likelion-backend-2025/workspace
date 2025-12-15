@@ -18,7 +18,7 @@ public class CorsConfig {
         config.addAllowedOrigin("http://localhost:5173");
          config.addAllowedOrigin("http://localhost:5174");
           config.addAllowedOrigin("http://localhost:5175");
-           config.addAllowedOrigin("http://localhost:5176");
+           config.addAllowedOrigin("http://localhost:3000");
         
         // 허용할 HTTP 메서드
         config.addAllowedMethod("GET");

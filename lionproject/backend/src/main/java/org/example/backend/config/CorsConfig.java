@@ -16,6 +16,9 @@ public class CorsConfig {
         
         // 프론트엔드 도메인 허용 (Vite 기본 포트)
         config.addAllowedOrigin("http://localhost:5173");
+         config.addAllowedOrigin("http://localhost:5174");
+          config.addAllowedOrigin("http://localhost:5175");
+           config.addAllowedOrigin("http://localhost:5176");
         
         // 허용할 HTTP 메서드
         config.addAllowedMethod("GET");
